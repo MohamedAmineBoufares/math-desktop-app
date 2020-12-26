@@ -121,14 +121,13 @@ class mclass:
         
         self.canvas.draw()
 
-        
+if __name__ == '__main__':
+    
+    window= Tk()
 
+    start= mclass(window)
 
-window= Tk()
-
-start= mclass(window)
-
-window.mainloop()
+    window.mainloop()
 
 
 
