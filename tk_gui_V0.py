@@ -65,7 +65,7 @@ class mclass:
         self.a.set_title ("Graphe de f", fontsize=16)
         self.a.set_ylabel("y=f(x)", fontsize=14)
         self.a.set_xlabel("x", fontsize=14)
-        self.a.set_facecolor("black")
+        self.a.set_facecolor("white")
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.fr2)
         self.canvas.get_tk_widget().pack()
         self.canvas.draw()
@@ -77,13 +77,17 @@ class mclass:
         f= lambda x: eval(self.box.get())
         ff= lambda x: self.box.get()
         x=np.linspace(float(self.boxa.get()), float(self.boxb.get()), 1001)
-        pp=f(x)
+        
+        pp=np.vectorize(f)
         p= ff(x)
 
         D = diff(p, self.x) # Calcule du Dérivé
         d = lambda x: eval(str(diff(p, self.x)))
         I = integrate(p, self.x) # Calcule du Primitive
         i = lambda x: eval(str(integrate(p, self.x)))
+
+        d_vect = np.vectorize(d)
+        i_vect = np.vectorize(i)
 
         self.a.cla()
         self.a.set_ylim([float(self.boxa.get()), float(self.boxb.get())])
@@ -94,15 +98,17 @@ class mclass:
         self.a.set_xlabel("x", fontsize=14)
         self.a.grid(True)
         
-        self.a.plot(x, pp,color='blue') # Afficher F(x)
-        self.a.plot(x, d(x),color='green') # Afficher F'(x)
-        self.a.plot(x, i(x),color='yellow') # Afficher F-1(x)
+        self.a.plot(x, pp(x),color='blue', label='F(X)') # Afficher F(x)
+        self.a.plot(x, d_vect(x),color='green', label='Dérivé') # Afficher F'(x)
+        self.a.plot(x, i_vect(x),color='red', label="Primitive") # Afficher F-1(x)
+        self.a.legend()
         
         
         self.res_txt.set(D) # Afichage du Dérivé dans la GUI
-        self.resp_txt.set(I) # Afichage du Dérivé dans la GUI
+        self.resp_txt.set(I) # Afichage du Primitive dans la GUI
         
         
+        #print(type(self.box.get()))
         
         self.canvas.draw()
 
