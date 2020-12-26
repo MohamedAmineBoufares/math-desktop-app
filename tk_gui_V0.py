@@ -37,25 +37,34 @@ class mclass:
         self.diriv_txt=StringVar()
         self.diriv_txt.set("Dérivé: ")
         self.label_diriv = Label(self.fr1, textvariable=self.diriv_txt,justify=RIGHT, anchor="w", height=4)
-        self.label_diriv.grid(sticky = E, row=4, column=0)
+        self.label_diriv.grid(sticky = E, row=5, column=0)
         
         self.res_txt=StringVar()
         self.res_diriv = Label(self.fr1,textvariable=self.res_txt,justify=RIGHT, anchor="w", width=10,borderwidth=3,bg="powder blue")
-        self.res_diriv.grid(sticky = W, row=4, column=1)
+        self.res_diriv.grid(sticky = W, row=5, column=1)
+
+        # Slider pour le dérivé
+        self.s_txt=StringVar()
+        self.s_txt.set("Ordre du Dérivé: ")
+        self.label_s = Label(self.fr1, textvariable=self.s_txt,justify=RIGHT, anchor="w", height=4)
+        self.label_s.grid(sticky = E, row=4, column=0)
+        
+        self.slider = Scale(self.fr1, from_=1, to=10, orient=HORIZONTAL)
+        self.slider.grid(sticky = W, row=4, column=1)
 
         # Prémitive
         self.pri_txt=StringVar()
         self.pri_txt.set("Primitive: ")
         self.label_pri = Label(self.fr1, textvariable=self.pri_txt,justify=RIGHT, anchor="w")
-        self.label_pri.grid(sticky = E, row=5, column=0)
+        self.label_pri.grid(sticky = E, row=6, column=0)
         
         self.resp_txt=StringVar()
         self.res_prim = Label(self.fr1,textvariable=self.resp_txt,justify=RIGHT, anchor="w", width=10,borderwidth=3,bg="powder blue")
-        self.res_prim.grid(sticky = W, row=5, column=1)
+        self.res_prim.grid(sticky = W, row=6, column=1)
         
         # Button
         self.button = Button (self.fr1, width =35,text="plot",bg="powder blue", command=self.plot)
-        self.button.grid(row=6,column=0,columnspan=3)
+        self.button.grid(row=7,column=0,columnspan=3)
         self.fr1.grid(row=1,column=0,padx=10,pady=10,sticky="ns")
         self.fr2.grid(row=1,column=1,padx=10,pady=10)
            
@@ -74,15 +83,15 @@ class mclass:
         
     # Plot + Calculation Function
     def plot (self):
-        f= lambda x: eval(self.box.get())
-        ff= lambda x: self.box.get()
+        f= lambda x: eval(self.box.get().lower())
+        ff= lambda x: self.box.get().lower()
         x=np.linspace(float(self.boxa.get()), float(self.boxb.get()), 1001)
         
         pp=np.vectorize(f)
         p= ff(x)
 
-        D = diff(p, self.x) # Calcule du Dérivé
-        d = lambda x: eval(str(diff(p, self.x)))
+        D = diff(p, self.x, self.slider.get()) # Calcule du Dérivé
+        d = lambda x: eval(str(diff(p, self.x, self.slider.get())))
         I = integrate(p, self.x) # Calcule du Primitive
         i = lambda x: eval(str(integrate(p, self.x)))
 
@@ -108,7 +117,7 @@ class mclass:
         self.resp_txt.set(I) # Afichage du Primitive dans la GUI
         
         
-        #print(type(self.box.get()))
+        print(type(self.slider.get()))
         
         self.canvas.draw()
 
