@@ -33,7 +33,7 @@ class mclass:
         self.boxb.grid(sticky = W,row=3,column=1)
         self.box = Entry(self.fr1,borderwidth=3,bg="white")
         self.box.grid(row=1,column=1)
-
+       
         # Dérivé
         self.diriv_txt=StringVar()
         self.diriv_txt.set("Dérivé: ")
@@ -72,7 +72,7 @@ class mclass:
         self.label_chbf.grid(sticky = E, row=7, column=0)
         
         self.chbf=BooleanVar() 
-        self.res_chbf = Checkbutton(self.fr1,textvariable=self.chbf,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_F, activebackground="blue")
+        self.res_chbf = Checkbutton(self.fr1,var=self.chbf,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_F, activebackground="blue")
         self.res_chbf.grid(sticky = W, row=7, column=1)
 
             # Afficher (ou pas) le dérivé
@@ -93,7 +93,7 @@ class mclass:
         self.label_chbp.grid(sticky = E, row=9, column=0)
         
         self.chbp=BooleanVar() 
-        self.res_chbp = Checkbutton(self.fr1,textvariable=self.chbp,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_P, activebackground="red")
+        self.res_chbp = Checkbutton(self.fr1, var=self.chbp,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_P, activebackground="red")
         self.res_chbp.grid(sticky = W, row=9, column=1)
 
 
@@ -110,16 +110,21 @@ class mclass:
         self.a.set_ylabel("y=f(x)", fontsize=14)
         self.a.set_xlabel("x", fontsize=14)
         self.a.set_facecolor("white")
+        
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.fr2)
         self.canvas.get_tk_widget().pack()
         self.canvas.draw()
         self.x = symbols('x')
+        
+        
          
-        
-        
     # Plot + Calculation Function
     def plot (self):
         
+        self.chbf.set(False)
+        self.chbd.set(False)
+        self.chbp.set(False)
+
         f= lambda x: eval(self.box.get().lower())
         ff= lambda x: self.box.get().lower()
         self.t=np.linspace(float(self.boxa.get()), float(self.boxb.get()), 1001)
@@ -149,33 +154,79 @@ class mclass:
         self.res_txt.set(D) # Afichage du Dérivé dans la GUI
         self.resp_txt.set(I) # Afichage du Primitive dans la GUI
         self.canvas.draw()
-        handles, labels = self.a.get_legend_handles_labels()
-
-    
-
+       
     def afficher_F(self):
 
-        self.a.plot(self.t, self.pp(self.t),color='blue', label='F(X)') # Afficher F(x)
-        self.a.legend()
-        self.canvas.draw()
+            if self.chbf.get():
+                
+                self.a.plot(self.t, self.pp(self.t),color='blue', label='F(X)') # Afficher F(x)
+                handles, self.labels = self.a.get_legend_handles_labels()
+                self.a.legend()
+                self.canvas.draw()
+            else:
+                
+                handles, self.labels = self.a.get_legend_handles_labels()
+                j=-1
+              
+                for i in self.labels :
+                        
+                    j+=1
+                        
+                    if i == "F(X)" :
+                            
+                        del self.a.lines[j] # Supprimer F(x)
+                        self.a.legend()
+                        self.canvas.draw()
+
 
     def afficher_D(self):
-        
-        if self.chbd.get():
             
-            self.a.plot(self.t, self.d_vect(self.t),color='green', label='Dérivé') # Afficher F'(x)
-            self.a.legend()
-            self.canvas.draw()
+            if self.chbd.get():
+                
+                self.a.plot(self.t, self.d_vect(self.t),color='green', label='Dérivé') # Afficher F'(x)
+                handles, self.labels = self.a.get_legend_handles_labels()
+                self.a.legend()
+                self.canvas.draw()
 
-        else:
-            del self.a.lines[1] # Afficher F'(x)
+            else :
+                handles, self.labels = self.a.get_legend_handles_labels()
+                j=-1
+              
+                for i in self.labels :
+                        
+                    j+=1
+                        
+                    if i == "Dérivé" :
+                            
+                        del self.a.lines[j] # Supprimer F'(x)
+                        self.a.legend()
+                        self.canvas.draw()
+                            
 
     def afficher_P(self):
-         
-        self.a.plot(self.t, self.i_vect(self.t),color='red', label="Primitive") # Afficher F-1(x)
-        self.a.legend()
-        self.canvas.draw()
+            
+            if self.chbp.get():
 
+                self.a.plot(self.t, self.i_vect(self.t),color='red', label="Primitive") # Afficher F-1(x)
+                handles, self.labels = self.a.get_legend_handles_labels()
+                self.a.legend()
+                self.canvas.draw()
+            else :
+                handles, self.labels = self.a.get_legend_handles_labels()
+                j=-1
+              
+                for i in self.labels :
+                        
+                    j+=1
+                        
+                    if i == "Primitive" :
+                            
+                        del self.a.lines[j] # Supprimer F'(x)
+                        self.a.legend()
+                        self.canvas.draw()
+    
+    
+    
 
 if __name__ == '__main__':
     
