@@ -12,6 +12,7 @@ class mclass:
 
     def __init__(self,  window):
         self.window = window
+        self.window.title("Projet Analyse Numérique")
         self.fr1 = Frame(window,highlightbackground="black", highlightthickness=2, width=100, height=100, bd= 5) # à gauche
         self.fr2 = Frame(window,highlightbackground="darkgray", highlightthickness=2, width=100, height=100, bd= 5) # à droite
         self.func_txt=StringVar()
@@ -61,10 +62,44 @@ class mclass:
         self.resp_txt=StringVar()
         self.res_prim = Label(self.fr1,textvariable=self.resp_txt,justify=RIGHT, anchor="w", width=10,borderwidth=3,bg="powder blue")
         self.res_prim.grid(sticky = W, row=6, column=1)
+
+        # Check_Buttons
+
+            # Afficher (ou pas) F(x)
+        self.chbf_txt=StringVar()
+        self.chbf_txt.set("Afficher F(x) ")
+        self.label_chbf = Label(self.fr1, textvariable=self.chbf_txt,justify=RIGHT, anchor="w")
+        self.label_chbf.grid(sticky = E, row=7, column=0)
         
+        self.chbf=BooleanVar() 
+        self.res_chbf = Checkbutton(self.fr1,textvariable=self.chbf,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_F, activebackground="blue")
+        self.res_chbf.grid(sticky = W, row=7, column=1)
+
+            # Afficher (ou pas) le dérivé
+        self.chbd_txt=StringVar()
+        self.chbd_txt.set("Afficher le dérivé ")
+        self.label_chbd = Label(self.fr1, textvariable=self.chbd_txt,justify=RIGHT, anchor="w")
+        self.label_chbd.grid(sticky = E, row=8, column=0)
+        
+        self.chbd=BooleanVar() 
+        self.chbd.set(False)
+        self.res_chbd = Checkbutton(self.fr1, var=self.chbd,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_D, activebackground="green")
+        self.res_chbd.grid(sticky = W, row=8, column=1)
+
+            # Afficher (ou pas) le primitive
+        self.chbp_txt=StringVar()
+        self.chbp_txt.set("Afficher le prémitive ")
+        self.label_chbp = Label(self.fr1, textvariable=self.chbp_txt,justify=RIGHT, anchor="w")
+        self.label_chbp.grid(sticky = E, row=9, column=0)
+        
+        self.chbp=BooleanVar() 
+        self.res_chbp = Checkbutton(self.fr1,textvariable=self.chbp,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_P, activebackground="red")
+        self.res_chbp.grid(sticky = W, row=9, column=1)
+
+
         # Button
         self.button = Button (self.fr1, width =35,text="plot",bg="powder blue", command=self.plot)
-        self.button.grid(row=7,column=0,columnspan=3)
+        self.button.grid(row=10,column=0,columnspan=3)
         self.fr1.grid(row=1,column=0,padx=10,pady=10,sticky="ns")
         self.fr2.grid(row=1,column=1,padx=10,pady=10)
            
@@ -78,25 +113,27 @@ class mclass:
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.fr2)
         self.canvas.get_tk_widget().pack()
         self.canvas.draw()
+        self.x = symbols('x')
+         
         
-        self.x = symbols('x') 
         
     # Plot + Calculation Function
     def plot (self):
+        
         f= lambda x: eval(self.box.get().lower())
         ff= lambda x: self.box.get().lower()
-        x=np.linspace(float(self.boxa.get()), float(self.boxb.get()), 1001)
+        self.t=np.linspace(float(self.boxa.get()), float(self.boxb.get()), 1001)
         
-        pp=np.vectorize(f)
-        p= ff(x)
+        self.pp=np.vectorize(f)
+        p= ff(self.t)
 
         D = diff(p, self.x, self.slider.get()) # Calcule du Dérivé
         d = lambda x: eval(str(diff(p, self.x, self.slider.get())))
         I = integrate(p, self.x) # Calcule du Primitive
         i = lambda x: eval(str(integrate(p, self.x)))
 
-        d_vect = np.vectorize(d)
-        i_vect = np.vectorize(i)
+        self.d_vect = np.vectorize(d)
+        self.i_vect = np.vectorize(i)
 
         self.a.cla()
         self.a.set_ylim([float(self.boxa.get()), float(self.boxb.get())])
@@ -106,20 +143,39 @@ class mclass:
         self.a.set_ylabel("y=f(x)", fontsize=14)
         self.a.set_xlabel("x", fontsize=14)
         self.a.grid(True)
-        
-        self.a.plot(x, pp(x),color='blue', label='F(X)') # Afficher F(x)
-        self.a.plot(x, d_vect(x),color='green', label='Dérivé') # Afficher F'(x)
-        self.a.plot(x, i_vect(x),color='red', label="Primitive") # Afficher F-1(x)
+    
         self.a.legend()
-        
         
         self.res_txt.set(D) # Afichage du Dérivé dans la GUI
         self.resp_txt.set(I) # Afichage du Primitive dans la GUI
-        
-        
-        print(type(self.slider.get()))
-        
         self.canvas.draw()
+        handles, labels = self.a.get_legend_handles_labels()
+
+    
+
+    def afficher_F(self):
+
+        self.a.plot(self.t, self.pp(self.t),color='blue', label='F(X)') # Afficher F(x)
+        self.a.legend()
+        self.canvas.draw()
+
+    def afficher_D(self):
+        
+        if self.chbd.get():
+            
+            self.a.plot(self.t, self.d_vect(self.t),color='green', label='Dérivé') # Afficher F'(x)
+            self.a.legend()
+            self.canvas.draw()
+
+        else:
+            del self.a.lines[1] # Afficher F'(x)
+
+    def afficher_P(self):
+         
+        self.a.plot(self.t, self.i_vect(self.t),color='red', label="Primitive") # Afficher F-1(x)
+        self.a.legend()
+        self.canvas.draw()
+
 
 if __name__ == '__main__':
     
@@ -128,9 +184,3 @@ if __name__ == '__main__':
     start= mclass(window)
 
     window.mainloop()
-    #.
-
-
-
-
-
