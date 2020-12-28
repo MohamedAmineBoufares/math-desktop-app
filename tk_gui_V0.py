@@ -11,23 +11,25 @@ from sympy import *
 class mclass:
 
     def __init__(self,  window):
+        
         self.window = window
         self.window.title("Projet Analyse Numérique")
-        self.fr1 = Frame(window,highlightbackground="black", highlightthickness=2, width=100, height=100, bd= 5) # à gauche
-        self.fr2 = Frame(window,highlightbackground="darkgray", highlightthickness=2, width=100, height=100, bd= 5) # à droite
+        self.fr1 = Frame(window,highlightbackground="black", highlightthickness=2, width=100, height=100, bd= 5) # Frame à gauche
+        self.fr2 = Frame(window,highlightbackground="black", highlightthickness=2, width=100, height=100, bd= 5) # Frame à droite
         self.func_txt=StringVar()
         self.func_txt.set("L'expression de f :")
-        self.label_func=Label(self.fr1, textvariable=self.func_txt,justify=RIGHT, height=4)
+        self.label_func=Label(self.fr1, textvariable=self.func_txt,justify=RIGHT, height=4, font=("Arial", 12))
         self.label_func.grid(row=1,column=0)
+        
         self.a_txt=StringVar()
         self.a_txt.set("a:")
-        self.label_a=Label(self.fr1, textvariable=self.a_txt,justify=RIGHT, anchor="w", height=4)
+        self.label_a=Label(self.fr1, textvariable=self.a_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_a.grid(sticky = E,row=2,column=0)
         self.boxa = Entry(self.fr1,width=10,borderwidth=3,bg="powder blue")
         self.boxa.grid(sticky = W,row=2,column=1)
         self.b_txt=StringVar()
         self.b_txt.set("b:")
-        self.label_b=Label(self.fr1, textvariable=self.b_txt,justify=RIGHT, anchor="w", height=4)
+        self.label_b=Label(self.fr1, textvariable=self.b_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_b.grid(sticky = E,row=3,column=0)
         self.boxb = Entry(self.fr1,width=10,borderwidth=3,bg="powder blue")
         self.boxb.grid(sticky = W,row=3,column=1)
@@ -37,7 +39,7 @@ class mclass:
         # Dérivé
         self.diriv_txt=StringVar()
         self.diriv_txt.set("Dérivé: ")
-        self.label_diriv = Label(self.fr1, textvariable=self.diriv_txt,justify=RIGHT, anchor="w", height=4)
+        self.label_diriv = Label(self.fr1, textvariable=self.diriv_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_diriv.grid(sticky = E, row=5, column=0)
         
         self.res_txt=StringVar()
@@ -47,7 +49,7 @@ class mclass:
         # Slider pour le dérivé
         self.s_txt=StringVar()
         self.s_txt.set("Ordre du Dérivé: ")
-        self.label_s = Label(self.fr1, textvariable=self.s_txt,justify=RIGHT, anchor="w", height=4)
+        self.label_s = Label(self.fr1, textvariable=self.s_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_s.grid(sticky = E, row=4, column=0)
         
         self.slider = Scale(self.fr1, from_=1, to=10, orient=HORIZONTAL)
@@ -56,7 +58,7 @@ class mclass:
         # Prémitive
         self.pri_txt=StringVar()
         self.pri_txt.set("Primitive: ")
-        self.label_pri = Label(self.fr1, textvariable=self.pri_txt,justify=RIGHT, anchor="w")
+        self.label_pri = Label(self.fr1, textvariable=self.pri_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
         self.label_pri.grid(sticky = E, row=6, column=0)
         
         self.resp_txt=StringVar()
@@ -68,37 +70,40 @@ class mclass:
             # Afficher (ou pas) F(x)
         self.chbf_txt=StringVar()
         self.chbf_txt.set("Afficher F(x) ")
-        self.label_chbf = Label(self.fr1, textvariable=self.chbf_txt,justify=RIGHT, anchor="w")
+        self.label_chbf = Label(self.fr1, textvariable=self.chbf_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
         self.label_chbf.grid(sticky = E, row=7, column=0)
         
         self.chbf=BooleanVar() 
-        self.res_chbf = Checkbutton(self.fr1,var=self.chbf,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_F, activebackground="blue")
+        self.res_chbf = Checkbutton(self.fr1,var=self.chbf,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_F,
+                                                                                                                    activebackground="blue")
         self.res_chbf.grid(sticky = W, row=7, column=1)
 
             # Afficher (ou pas) le dérivé
         self.chbd_txt=StringVar()
         self.chbd_txt.set("Afficher le dérivé ")
-        self.label_chbd = Label(self.fr1, textvariable=self.chbd_txt,justify=RIGHT, anchor="w")
+        self.label_chbd = Label(self.fr1, textvariable=self.chbd_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
         self.label_chbd.grid(sticky = E, row=8, column=0)
         
         self.chbd=BooleanVar() 
         self.chbd.set(False)
-        self.res_chbd = Checkbutton(self.fr1, var=self.chbd,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_D, activebackground="green")
+        self.res_chbd = Checkbutton(self.fr1, var=self.chbd,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_D,
+                                                                                                                    activebackground="green")
         self.res_chbd.grid(sticky = W, row=8, column=1)
 
             # Afficher (ou pas) le primitive
         self.chbp_txt=StringVar()
         self.chbp_txt.set("Afficher le prémitive ")
-        self.label_chbp = Label(self.fr1, textvariable=self.chbp_txt,justify=RIGHT, anchor="w")
+        self.label_chbp = Label(self.fr1, textvariable=self.chbp_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
         self.label_chbp.grid(sticky = E, row=9, column=0)
         
         self.chbp=BooleanVar() 
-        self.res_chbp = Checkbutton(self.fr1, var=self.chbp,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_P, activebackground="red")
+        self.res_chbp = Checkbutton(self.fr1, var=self.chbp,justify=RIGHT, anchor="w", width=10,borderwidth=3, command = self.afficher_P,
+                                                                                                                    activebackground="red")
         self.res_chbp.grid(sticky = W, row=9, column=1)
 
 
         # Button
-        self.button = Button (self.fr1, width =35,text="plot",bg="powder blue", command=self.plot)
+        self.button = Button (self.fr1, width =15,text="Afficher",bg="powder blue", command=self.plot, font=("Arial", 12))
         self.button.grid(row=10,column=0,columnspan=3)
         self.fr1.grid(row=1,column=0,padx=10,pady=10,sticky="ns")
         self.fr2.grid(row=1,column=1,padx=10,pady=10)
@@ -107,7 +112,7 @@ class mclass:
         self.fig = Figure(figsize=(6,6))
         self.a = self.fig.add_subplot(111)
         self.a.set_title ("Graphe de f", fontsize=16)
-        self.a.set_ylabel("y=f(x)", fontsize=14)
+        self.a.set_ylabel("y", fontsize=14)
         self.a.set_xlabel("x", fontsize=14)
         self.a.set_facecolor("white")
         
@@ -115,9 +120,7 @@ class mclass:
         self.canvas.get_tk_widget().pack()
         self.canvas.draw()
         self.x = symbols('x')
-        
-        
-         
+           
     # Plot + Calculation Function
     def plot (self):
         
@@ -149,8 +152,6 @@ class mclass:
         self.a.set_xlabel("x", fontsize=14)
         self.a.grid(True)
     
-        self.a.legend()
-        
         self.res_txt.set(D) # Afichage du Dérivé dans la GUI
         self.resp_txt.set(I) # Afichage du Primitive dans la GUI
         self.canvas.draw()
@@ -163,21 +164,13 @@ class mclass:
                 handles, self.labels = self.a.get_legend_handles_labels()
                 self.a.legend()
                 self.canvas.draw()
+            
             else:
                 
-                handles, self.labels = self.a.get_legend_handles_labels()
-                j=-1
-              
-                for i in self.labels :
-                        
-                    j+=1
-                        
-                    if i == "F(X)" :
-                            
-                        del self.a.lines[j] # Supprimer F(x)
-                        self.a.legend()
-                        self.canvas.draw()
-
+                index = self.labels.index("F(X)")
+                del self.a.lines[index] # Supprimer F(x)
+                self.a.legend()
+                self.canvas.draw()
 
     def afficher_D(self):
             
@@ -189,20 +182,12 @@ class mclass:
                 self.canvas.draw()
 
             else :
-                handles, self.labels = self.a.get_legend_handles_labels()
-                j=-1
-              
-                for i in self.labels :
-                        
-                    j+=1
-                        
-                    if i == "Dérivé" :
-                            
-                        del self.a.lines[j] # Supprimer F'(x)
-                        self.a.legend()
-                        self.canvas.draw()
-                            
 
+                index = self.labels.index("Dérivé")
+                del self.a.lines[index] # Supprimer F'(x)
+                self.a.legend()
+                self.canvas.draw()
+              
     def afficher_P(self):
             
             if self.chbp.get():
@@ -211,23 +196,15 @@ class mclass:
                 handles, self.labels = self.a.get_legend_handles_labels()
                 self.a.legend()
                 self.canvas.draw()
-            else :
-                handles, self.labels = self.a.get_legend_handles_labels()
-                j=-1
-              
-                for i in self.labels :
-                        
-                    j+=1
-                        
-                    if i == "Primitive" :
-                            
-                        del self.a.lines[j] # Supprimer F'(x)
-                        self.a.legend()
-                        self.canvas.draw()
-    
-    
-    
 
+            else :
+                
+                index = self.labels.index("Primitive")
+                del self.a.lines[index] # Supprimer F-1(x)
+                self.a.legend()
+                self.canvas.draw()
+    
+    
 if __name__ == '__main__':
     
     window= Tk()
