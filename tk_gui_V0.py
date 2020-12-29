@@ -9,8 +9,37 @@ from sympy import *
 from scipy.integrate import quad 
 from tkinter import *
 from tkinter.ttk import Combobox
+from tkinter.messagebox import showwarning
 
-class Rectangle(object): #class rectange 
+class RectangleG ( object ) :
+    def __init__ (self , a , b , n , f ) :
+        self.a = a
+        self.b = b
+        self.x = np.linspace( a , b , n+1 )
+        self.f = f
+        self.n = n
+    def integrate ( self , f ) :
+        x= self.x
+        y= f( x )
+        h = float( x[1] - x[0] )
+        s = sum( y[ 0 : -1 ] )
+        return h * s
+    def Graph ( self , f , resolution =1001 ) :
+        xl = self.x
+        yl = f(xl)
+        xlist_fine =np.linspace( self.a , self.b , resolution )
+        for i in range ( self.n ) :
+            x_rect = [xl[ i ] , xl[ i ] , xl[ i + 1 ] , xl[i+1] , xl[ i ] ] # abscisses des sommets
+            y_rect = [0 , yl[ i ] , yl[ i ] , 0 , 0 ] # ordonnees des sommets
+            plt.plot ( x_rect , y_rect , 'r' )
+        yflist_fine = f ( xlist_fine )
+        plt.plot ( xlist_fine , yflist_fine )
+        plt.plot(xl, yl,"bo")
+        plt.xlabel ( 'x' )
+        plt.ylabel ( ' f ( x ) ' )
+        plt.title('Methode des Rectangles Gauches, N = {}'.format(self.n))
+     
+class Milieu(object):
     def __init__(self, a, b, n, f):
         self.a = a
         self.b = b
@@ -18,26 +47,92 @@ class Rectangle(object): #class rectange
         self.f = f
         self.n = n
     def integrate(self,f):
-        x=self.x# contiens les xi
-        y=f(x)#les yi 
+        h = float(self.b-self.a)/self.n
+        result = 0
+        for i in range(self.n):
+            result += f((self.a + h/2.0) + i*h)
+        result *= h
+        return result
+    def Graph ( self , f , resolution =1001 ) :
+        xl = self.x
+        yl = f(xl)
+        xlist_fine =np.linspace( self.a , self.b , resolution )
+        for i in range ( self.n ) :
+            mi = (xl[i]+xl[i+1])/2
+            x_rect = [xl[ i ] , xl[ i ],xl[ i+1 ],xl[ i+1 ],xl[ i ]] # abscisses des sommets
+            y_rect = [0 , f(mi),f(mi),0,0] # ordonnees des sommets
+            plt.plot(x_rect,y_rect,'r')
+            plt.plot ( mi , f(mi) , 'bo' )
+        yflist_fine = f ( xlist_fine )
+        plt.plot ( xlist_fine , yflist_fine )
+        plt.xlabel ( 'x' )
+        plt.ylabel ( ' f ( x ) ' )
+        plt.title('Methode de Point Milieu, N = {}'.format(self.n))
+
+class Trapezoidal(object):
+    def __init__(self, a, b, n, f):
+        self.a = a
+        self.b = b
+        self.x = np.linspace(a, b, n+1)
+        self.f = f
+        self.n = n
+    def integrate(self,f):
+        x=self.x
+        y=f(x)
         h = float(x[1] - x[0])
-        s = sum(y[0:-1])
-        return h * s
+        s = y[0] + y[-1] + 2.0*sum(y[1:-1])
+        return h * s / 2.0
     def Graph(self,f,resolution=1001):
         xl = self.x
         yl = f(xl)
         xlist_fine=np.linspace(self.a, self.b, resolution)
         for i in range(self.n):
             x_rect = [xl[i], xl[i], xl[i+1], xl[i+1], xl[i]] # abscisses des sommets
-            y_rect = [0   , yl[i], yl[i]  , 0     , 0   ] # ordonnees des sommets
-            plt.plot(x_rect, y_rect,"g")
+            y_rect = [0   , yl[i], yl[i+1]  , 0     , 0   ] # ordonnees des sommets
+            plt.plot(x_rect, y_rect,"r")
         yflist_fine = f(xlist_fine)
-        plt.plot(xlist_fine, yflist_fine)
-        plt.plot(xl, yl,"rd")
-  
+        plt.plot(xlist_fine, yflist_fine)#plot de f(x)
+        plt.plot(xl, yl,"cs")#point support
+        plt.ylabel ( ' f ( x ) ' )
+        plt.title('Methode des Trapézes, N = {}'.format(self.n))
+
+class Simps(object):
+    def __init__(self, a, b, n, f): #initialiser les paramètres du classe
+        self.a = a
+        self.b = b
+        self.x = np.linspace(a, b, n+1)#les pts supports
+        self.f = f
+        self.n = n #nombre de subdivision
+
+    def integrate(self,f):#calculer la somme ((b-a)/6*n)*[f(a)+2*sum(xi)+4*sum(mi)+f(b)]
+        x=self.x #les points supports xi #x(0)=a-->x(n)=b
+        y=f(x) #yi variable local y(o)=f(xo)-->y(n)
+        h = float(x[1] - x[0])#pas h=(b-a)/2*n
+        n = len(x) - 1#nombre subdivision
+        if n % 2 == 1:#si le reste de la division =1 impaire
+            n -= 1
+        s = y[0] + y[n] + 4.0 * sum(y[1:-1:2]) + 2.0 * sum(y[2:-2:2])
+        return h * s / 3.0
+    def Graph(self,f,resolution=1001):
+        xl = self.x 
+        yl = f(xl) 
+        xlist_fine=np.linspace(self.a, self.b, resolution)
+        for i in range(self.n):
+            xx=np.linspace(xl[i], xl[i+1], resolution)
+            m=(xl[i]+xl[i+1])/2#pt milieu
+            aa=xl[i]#borne gauche
+            bb=xl[i+1]#borne droite
+            l0 = (xx-m)/(aa-m)*(xx-bb)/(aa-bb)
+            l1 = (xx-aa)/(m-aa)*(xx-bb)/(m-bb)
+            l2 = (xx-aa)/(bb-aa)*(xx-m)/(bb-m)
+            P = f(aa)*l0 + f(m)*l1 + f(bb)*l2#
+            plt.plot(xx,P,'r')
+            plt.plot(m,f(m),"r",marker="s")
+        yflist_fine = f(xlist_fine)#fontion f
+        plt.plot(xlist_fine, yflist_fine,'b')
+        plt.plot(xl, yl,'bo')#point support en bleu rond
         plt.ylabel('f(x)')
-        plt.title('Rectangle')
-      
+        plt.title('Methode de Simpson, N = {}'.format(self.n))
 
 class mclass:
 
@@ -157,8 +252,7 @@ class mclass:
         self.meth = Combobox(self.fr3,values=["---","Rectangle", "Trapéze", "Simpson", "Point Milieu"], state="readonly")
         self.meth.current(0)                                                                                                        
         self.meth.grid(sticky = W, row=2, column=1)
-        self.meth.bind("<<ComboboxSelected>>", self.affichier_Rect)
-
+        
             # Borne Inf :
         self.integ_txt=StringVar()
         self.integ_txt.set("Donner borne inf: ")
@@ -189,7 +283,7 @@ class mclass:
             # Labels des reusltats
                 # Valeur Exacte = V.E
         self.ve_txt=StringVar()
-        self.ve_txt.set("V.E: ")
+        self.ve_txt.set("Valeur Exacte: ")
         self.label_ve = Label(self.fr3, textvariable=self.ve_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_ve.grid(sticky = E, row=6, column=0)
         
@@ -199,7 +293,7 @@ class mclass:
 
                 # Valeur Approché = V.A
         self.va_txt=StringVar()
-        self.va_txt.set("V.A: ")
+        self.va_txt.set("Valeur Approché: ")
         self.label_va = Label(self.fr3, textvariable=self.va_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_va.grid(sticky = E, row=7, column=0)
         
@@ -219,7 +313,7 @@ class mclass:
         
 
             # Button
-        self.button_2 = Button (self.fr3, width =15,text="Afficher Rect",bg="yellow green", command=self.affichier_Rect, font=("Arial", 12))
+        self.button_2 = Button (self.fr3, width =15,text="Afficher",bg="yellow green", command=self.choice, font=("Arial", 12))
         self.button_2.grid(row=9,column=0,columnspan=3)
         self.fr3.grid(row=1,column=2,padx=10,pady=10)
        
@@ -326,28 +420,119 @@ class mclass:
         b = int(self.boxsup.get())
         n = self.slider_n.get()
         x = np.linspace(a, b, n+1)
-        def f(x):
-            return np.sin(x)
         
-        R = Rectangle(a, b, n, f)
+        f= lambda x: eval(self.box.get().lower())
+        fx=np.vectorize(f)
+        
+        R = RectangleG(a, b, n, fx)
 
         fig = plt.figure()
         
         ax = fig.add_subplot(111)
 
-        I,r =quad(f, a, b)
-        R.Graph(f)
+        I,r = quad(fx, a, b)
+        R.Graph(fx)
 
         self.res_ve_txt.set("%12.4f"%I)
-        self.res_va_txt.set("%12.4f"% (R.integrate(f)))
-        self.res_e_txt.set("%12.4f"% (I-R.integrate(f)))
+        self.res_va_txt.set("%12.4f"% (R.integrate(fx)))
+        self.res_e_txt.set("%12.4f"% (I-R.integrate(fx)))
         
-        
-
-        print(self.meth.get(), type(self.meth.get()))
         plt.grid(True)
         plt.show()
 
+    def afficher_Milieu(self):
+
+        a = int(self.boxinf.get())
+        b = int(self.boxsup.get())
+        n = self.slider_n.get()
+        x = np.linspace(a, b, n+1)
+
+        f= lambda x: eval(self.box.get().lower())
+        fx=np.vectorize(f)
+        
+        M = Milieu(a,b,n,fx)
+
+        fig = plt.figure()
+        
+        ax = fig.add_subplot(111)
+       
+        I,r = quad(fx, a, b)
+        M.Graph(fx)
+
+        self.res_ve_txt.set("%12.4f"%I)
+        self.res_va_txt.set("%12.4f"% (M.integrate(fx)))
+        self.res_e_txt.set("%12.4f"% (I-M.integrate(fx)))
+        
+        plt.grid(True)
+        plt.show()
+
+    def afficher_Trapez(self):
+
+        a = int(self.boxinf.get())
+        b = int(self.boxsup.get())
+        n = self.slider_n.get()
+        x = np.linspace(a, b, n+1)
+
+        f= lambda x: eval(self.box.get().lower())
+        fx=np.vectorize(f)
+        
+        T = Trapezoidal(a, b, n, fx)
+
+        fig = plt.figure()
+        
+        ax = fig.add_subplot(111)
+        I,r = quad(fx, a, b)
+        T.Graph(fx)
+    
+        self.res_ve_txt.set("%12.4f"%(I))
+        self.res_va_txt.set("%12.4f"% (T.integrate(fx)))
+        self.res_e_txt.set("%12.4f"% (I-T.integrate(fx)))
+
+        plt.grid(True)
+        plt.show()
+
+    def afficher_Simpson(self):
+
+        a = int(self.boxinf.get())
+        b = int(self.boxsup.get())
+        n = self.slider_n.get()
+        x = np.linspace(a, b, n+1)
+
+        f= lambda x: eval(self.box.get().lower())
+        fx=np.vectorize(f)
+        
+        S = Simps(a, b, n, fx)
+
+        fig = plt.figure()
+        
+        ax = fig.add_subplot(111)
+        I,r = quad(fx, a, b)
+        S.Graph(fx)
+
+        self.res_ve_txt.set("%12.4f"%(I))
+        self.res_va_txt.set("%12.4f"% (S.integrate(fx)))
+        self.res_e_txt.set("%12.4f"% (I-S.integrate(fx)))
+
+        plt.grid(True)
+        plt.show()
+
+    def choice(self):
+        ch = self.meth.get()
+        
+        if ch == "Rectangle":
+            self.affichier_Rect()
+        
+        elif ch == "Point Milieu":
+            self.afficher_Milieu()
+        
+        elif ch == "Trapéze":
+            self.afficher_Trapez()
+        
+        elif ch == "Simpson":
+            self.afficher_Simpson()
+
+        else:
+            showwarning("Warning", "Vous avez oubliez un paramétre \nou bien vous n'aves pas selectioner une méthode")
 
 if __name__ == '__main__':
     
