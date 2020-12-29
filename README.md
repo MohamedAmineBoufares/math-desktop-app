@@ -17,7 +17,24 @@
 <p>Les intersections de la courbe avec l'axe des abscisses indiquent les points d'annulation de la fonction,si la fonction est continue,déterminer sa signe(si la courbe est au-dessus de l'axe des abscisses, la fonction est positive sur cet intervalle et si la courbe est en dessous de l'axe des abscisses, la fonction est négative sur cet intervalle)</p>
 <p>La lecture graphique permet aussi de repérer les intervalles en abscisse sur lesquels la fonction est monotone, c'est-à-dire soit croissante, soit décroissante.</p>
 
-## Etude de primitive :
+## 4.Etude de primitive :
+<p>une primitive d’une fonction  f est une fonction F dont f est la dérivée : F'=f. Il s’agit donc d’un antécédent pour l’opération de dérivation.</p>
+
+<p>La détermination d’une primitive sert d’abord au calcul des intégrales de fonctions continues sur un segment, en application du théorème fondamental de l'analyse.:
+ f(x)dx=F(b)-F(a) </p>
+ <p>photo de dérivé</p>
+ 
+ ## 5.Etude de dérivé:
+ <p>La dérivée d'une fonction f est une fonction qui, à tout nombre pour lequel f admet un nombre dérivé, associe ce nombre dérivé. La dérivée en un point d'une fonction de plusieurs variables réelles, ou à valeurs vectorielles, est plus couramment appelée différentielle de la fonction en ce point, et n'est pas traitée ici. La dérivée d'une fonction f en x est usuellement notée f'(x) ou df/dx(x)}.</p>
+ 
+ ### 5.a.Ordre de dérivé:
+ Soit  une fonction dérivable sur un intervalle  Si  est dérivable sur  sa fonction dérivée  (ou  est appelée dérivée seconde de 
+
+On peut continuer le processus de dérivation et définir une relation de récurrence pour calculer la fonction dérivée  à l'ordre 
+
+La fonction  est de classe  sur l'intervalle  si  existe sur  en étant continue sur 
+
+Elle sera de classe  si elle est indéfiniment dérivable.
 
 # Méthodes d'intégration numérique: 
 ## 1.But
