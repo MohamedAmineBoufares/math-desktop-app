@@ -4,7 +4,7 @@
 <p> Ce projet permet de faire une etude de fonction avec un affichage des résultat et de claculer les méthodes d'intégration numériques .</p>
 <p>Tout d'abord ,on peut  définir une fonction mathématique (polynome, trigonométrique..) avec son intervalle ,on donnant comme résultat son primitivé et sa représentation , dérivéet sa représentation et/ou aussi n ordre de dérivé avec spécification de n et sa représentation . En plus , on peut représenté ,avec la fonction donné au début ,plusierus méthodes de l'analyse numérique comme (méthode de rectangle , méthode des trapézes , méthode des points milieux , méthodes de simspon)en donnant pour chaque fonction sa valeur approché ,valeur exacte et l'erreur.</p>
 
-#Méthodes d'intégration numérique: 
+# Méthodes d'intégration numérique: 
 ## 1.But
 <p>Le but  est d’aborder le calcul général de l’intégrale d’une fonction f(x) sur un domaine fini délimité par des bornes finies a et b.</p>
 ## 2.Méthode de Réctangle:
