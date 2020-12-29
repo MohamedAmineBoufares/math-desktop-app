@@ -72,7 +72,7 @@ La fonction f est de classe C**(n) sur l'intervalle I si f**(n) existe sur I en 
 
 <p>photo</p>
 
-## Méthode des points milieux:
+## 5.Méthode des points milieux:
 
 
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode du point médian est une méthode permettant de réaliser le calcul numérique d'une intégrale </FONT>
