@@ -5,7 +5,7 @@
 
 
 
-
+ll
 <FONT color="#6A5ACD" size="8">Méthode de Réctangle:</FONT>
 
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette méthode, très élémentaire, basée sur les sommes de Cauchy-Riemann (approchant l'aire sous une courbe) et appliquée à une fonction f continue, permet le calcul approché d'intégrales en choisissant une subdivision régulière de pas         xi+1 - xi = (b - a)/n, donc indépendant de i avec une valeur de n "suffisamment grande".</FONT>
