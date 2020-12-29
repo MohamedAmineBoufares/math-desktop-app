@@ -1,13 +1,11 @@
 # Projet_Analyse_Num
-<p>Introduction général:</p>
+# Introduction général:
 
 <p> Ce projet permet de faire une etude de fonction avec un affichage des résultat et de claculer les méthodes d'analyse numériques .</p>
 <p>Tout d'abord ,on peut  définir une fonction mathématique (polynome, trigonométrique..) avec son intervalle ,on donnant comme résultat son primitivé et sa représentation , dérivéet sa représentation et/ou aussi n ordre de dérivé avec spécification de n et sa représentation . En plus , on peut représenté ,avec la fonction donné au début ,plusierus méthodes de l'analyse numérique comme (méthode de rectangle , méthode des trapézes , méthode des points milieux , méthodes de simspon)en donnant pour chaque fonction sa valeur approché ,valeur exacte et l'erreur.</p>
 
 
-
-ll
-<FONT color="#6A5ACD" size="8">Méthode de Réctangle:</FONT>
+## Méthode de Réctangle:
 
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette méthode, très élémentaire, basée sur les sommes de Cauchy-Riemann (approchant l'aire sous une courbe) et appliquée à une fonction f continue, permet le calcul approché d'intégrales en choisissant une subdivision régulière de pas         xi+1 - xi = (b - a)/n, donc indépendant de i avec une valeur de n "suffisamment grande".</FONT>
   <FONT FACE="Arial, Helvetica, sans-serif" size="4">On obtient une succession de rectangles en rose ci-contre, d'où le nom de cette méthode, approchant l'aire sous la courbe,  où ci est choisi ici au "milieu" de [xi ; xi+1]. On calcule :</FONT>
@@ -15,7 +13,7 @@ ll
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">avec : h = (b - a)/n , xi = a + i.h , ci = (xi+1 + xi)/2 = a + ih + h/2. Le passage à la limite fournit l'intégrale cherchée</FONT>
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode des trapèzes est une méthode pour le calcul numérique d'une intégrale ,s'appuyant sur l'interpolation linéaire par intervalles.</FONT>
 
-<FONT color="#6A5ACD" size="8">Méthode des trapèzes:</FONT>
+## Méthode des trapèzes:
 
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode des trapèzes est une méthode pour le calcul numérique d'une intégrale ,s'appuyant sur l'interpolation linéaire par intervalles.</FONT>
 <p>intégrale</p>
@@ -24,7 +22,7 @@ ll
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">Le principe est d'assimiler la région sous la courbe représentative d'une fonction f définie sur un segment [a , b] à un trapèze et d'en calculer l'aire T :</FONT>
 
 
-<FONT color="#6A5ACD" size="8">Méthode de simpson:</FONT> 
+## Méthode de simpson:
 
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode de Simpson, du nom de Thomas Simpson, est une technique de calcul numérique d'une intégrale, c'est-à-dire, le calcul approché de:</FONT>
 <p>intégrale</p>
@@ -40,7 +38,7 @@ ll
 
 <p>photo</p>
 
-<FONT color="#6A5ACD" size="8">Méthode des points milieux:</FONT> 
+## Méthode des points milieux:
 
 
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode du point médian est une méthode permettant de réaliser le calcul numérique d'une intégrale </FONT>
