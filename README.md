@@ -40,6 +40,7 @@ Elle sera de classe  si elle est indéfiniment dérivable.
 # Méthodes d'intégration numérique: 
 ## 1.But
 <p>Le but  est d’aborder le calcul général de l’intégrale d’une fonction f(x) sur un domaine fini délimité par des bornes finies a et b.</p>
+
 ## 2.Méthode de Réctangle:
 
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette méthode, très élémentaire, basée sur les sommes de Cauchy-Riemann (approchant l'aire sous une courbe) et appliquée à une fonction f continue, permet le calcul approché d'intégrales en choisissant une subdivision régulière de pas         xi+1 - xi = (b - a)/n, donc indépendant de i avec une valeur de n "suffisamment grande".</FONT>
