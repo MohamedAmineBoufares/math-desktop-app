@@ -6,6 +6,7 @@ matplotlib.use('TkAgg')
 import numpy as np
 from numpy import *
 from sympy import *
+from scipy.integrate import quad 
 from tkinter import *
 from tkinter.ttk import Combobox
 
@@ -84,7 +85,7 @@ class mclass:
         self.label_s = Label(self.fr1, textvariable=self.s_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_s.grid(sticky = E, row=4, column=0)
         
-        self.slider = Scale(self.fr1, from_=1, to=10, orient=HORIZONTAL)
+        self.slider = Scale(self.fr1, from_=1, to=5, orient=HORIZONTAL)
         self.slider.grid(sticky = W, row=4, column=1)
 
         # Prémitive
@@ -133,7 +134,6 @@ class mclass:
                                                                                                                     activebackground="red")
         self.res_chbp.grid(sticky = W, row=9, column=1)
 
-
         # Button
         self.button = Button (self.fr1, width =15,text="Afficher",bg="powder blue", command=self.plot, font=("Arial", 12))
         self.button.grid(row=10,column=0,columnspan=3)
@@ -177,30 +177,50 @@ class mclass:
         self.boxsup = Entry(self.fr3,width=10,borderwidth=3,bg="yellow green")
         self.boxsup.grid(sticky = W,row=4,column=1)
 
+            # Slider pour nombre de divison
+        self.n_txt=StringVar()
+        self.n_txt.set("Nombre de divison: ")
+        self.label_n = Label(self.fr3, textvariable=self.n_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
+        self.label_n.grid(sticky = E, row=5, column=0)
+        
+        self.slider_n = Scale(self.fr3, from_=1, to=10, orient=HORIZONTAL)
+        self.slider_n.grid(sticky = W, row=5, column=1)
+
             # Labels des reusltats
+                # Valeur Exacte = V.E
+        self.ve_txt=StringVar()
+        self.ve_txt.set("V.E: ")
+        self.label_ve = Label(self.fr3, textvariable=self.ve_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
+        self.label_ve.grid(sticky = E, row=6, column=0)
+        
+        self.res_ve_txt=StringVar()
+        self.res_ve = Label(self.fr3,textvariable=self.res_ve_txt,justify=RIGHT, anchor="w", width=10,borderwidth=3,bg="yellow green")
+        self.res_ve.grid(sticky = W, row=6, column=1)
+
                 # Valeur Approché = V.A
         self.va_txt=StringVar()
         self.va_txt.set("V.A: ")
         self.label_va = Label(self.fr3, textvariable=self.va_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
-        self.label_va.grid(sticky = E, row=5, column=0)
+        self.label_va.grid(sticky = E, row=7, column=0)
         
         self.res_va_txt=StringVar()
         self.res_va = Label(self.fr3,textvariable=self.res_va_txt,justify=RIGHT, anchor="w", width=10,borderwidth=3,bg="yellow green")
-        self.res_va.grid(sticky = W, row=5, column=1)
+        self.res_va.grid(sticky = W, row=7, column=1)
+
                 # Erreur
         self.er_txt=StringVar()
-        self.er_txt.set("V.A: ")
+        self.er_txt.set("Erreur: ")
         self.label_er = Label(self.fr3, textvariable=self.er_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
-        self.label_va.grid(sticky = E, row=6, column=0)
+        self.label_er.grid(sticky = E, row=8, column=0)
         
         self.res_e_txt=StringVar()
         self.res_e = Label(self.fr3,textvariable=self.res_e_txt,justify=RIGHT, anchor="w", width=10,borderwidth=3,bg="yellow green")
-        self.res_e.grid(sticky = W, row=6, column=1)
+        self.res_e.grid(sticky = W, row=8, column=1)
         
 
             # Button
         self.button_2 = Button (self.fr3, width =15,text="Afficher Rect",bg="yellow green", command=self.affichier_Rect, font=("Arial", 12))
-        self.button_2.grid(row=7,column=0,columnspan=3)
+        self.button_2.grid(row=9,column=0,columnspan=3)
         self.fr3.grid(row=1,column=2,padx=10,pady=10)
        
         # Figure
@@ -302,9 +322,9 @@ class mclass:
     
     def affichier_Rect(self):
 
-        a = 0
-        b = 10
-        n =10#le nombre de subdivision 
+        a = int(self.boxinf.get())
+        b = int(self.boxsup.get())
+        n = self.slider_n.get()
         x = np.linspace(a, b, n+1)
         def f(x):
             return np.sin(x)
@@ -314,8 +334,16 @@ class mclass:
         fig = plt.figure()
         
         ax = fig.add_subplot(111)
-        
+
+        I,r =quad(f, a, b)
         R.Graph(f)
+
+        self.res_ve_txt.set("%12.4f"%I)
+        self.res_va_txt.set("%12.4f"% (R.integrate(f)))
+        self.res_e_txt.set("%12.4f"% (I-R.integrate(f)))
+        
+        
+
         print(self.meth.get(), type(self.meth.get()))
         plt.grid(True)
         plt.show()
