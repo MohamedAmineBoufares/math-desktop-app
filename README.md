@@ -8,12 +8,16 @@
 
 ## 1.But
 <p>une étude de fonction est la détermination de certaines propriétés d'une fonction numérique pour en tracer une représentation graphique à partir d'une expression analytique ou d'une équation fonctionnelle, ou encore pour en déduire le nombre et la disposition d'antécédents pour diverses valeurs numériques.</p>
+
 ## 2.Etude de fonction:
 <p>Pour étudier une fonction f(x), il faut passer d'abord par la détermination du domaine de définition et vise essentiellement la description des variations, voire des lignes de niveau dans le cas de fonctions de plusieurs variables.</p>
+
 ## 3.Etude graphique:
 <p>Lorsqu'une fonction est donnée par une représentation de courbe, la lecture graphique permet de lire son domaine de définition, à savoir l'ensemble des points de l'axe des abscisses pour lesquels la courbe associe une ordonnée.</p>
 <p>Les intersections de la courbe avec l'axe des abscisses indiquent les points d'annulation de la fonction,si la fonction est continue,déterminer sa signe(si la courbe est au-dessus de l'axe des abscisses, la fonction est positive sur cet intervalle et si la courbe est en dessous de l'axe des abscisses, la fonction est négative sur cet intervalle)</p>
 <p>La lecture graphique permet aussi de repérer les intervalles en abscisse sur lesquels la fonction est monotone, c'est-à-dire soit croissante, soit décroissante.</p>
+
+## Etude de primitive :
 
 # Méthodes d'intégration numérique: 
 ## 1.But
