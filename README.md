@@ -29,14 +29,9 @@
  <p>La dérivée d'une fonction f est une fonction qui, à tout nombre pour lequel f admet un nombre dérivé, associe ce nombre dérivé. La dérivée en un point d'une fonction de plusieurs variables réelles, ou à valeurs vectorielles, est plus couramment appelée différentielle de la fonction en ce point, et n'est pas traitée ici. La dérivée d'une fonction f en x est usuellement notée f'(x) ou df/dx(x)}.</p>
  
  ### 5.a.Ordre de dérivé:
- Soit  une fonction dérivable sur un intervalle  Si  est dérivable sur  sa fonction dérivée  (ou  est appelée dérivée seconde de 
-
-On peut continuer le processus de dérivation et définir une relation de récurrence pour calculer la fonction dérivée  à l'ordre 
-
-La fonction  est de classe  sur l'intervalle  si  existe sur  en étant continue sur 
-
-Elle sera de classe  si elle est indéfiniment dérivable.
-
+<p> Soit f une fonction dérivable sur un intervalle I ,  Si f' est dérivable sur I sa fonction dérivée f''  (ou  est appelée dérivée seconde de f.
+On peut continuer le processus de dérivation et définir une relation de récurrence pour calculer la fonction dérivée  à l'ordre f**(n) à l'ordre n.
+La fonction f est de classe C**(n) sur l'intervalle I si f**(n) existe sur I en étant continue sur I.</p>
 # Méthodes d'intégration numérique: 
 ## 1.But
 <p>Le but  est d’aborder le calcul général de l’intégrale d’une fonction f(x) sur un domaine fini délimité par des bornes finies a et b.</p>
