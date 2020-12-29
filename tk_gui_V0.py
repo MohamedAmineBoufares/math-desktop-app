@@ -145,13 +145,13 @@ class mclass:
             # Label
         self.integ_txt=StringVar()
         self.integ_txt.set("Si tu veux calculer la V.A de l'intégrale: ")
-        self.label_integ = Label(self.fr3, textvariable=self.integ_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
+        self.label_integ = Label(self.fr3, textvariable=self.integ_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_integ.grid(row=1,column=0,columnspan=3)
 
             # ComboBox
         self.meth_txt=StringVar()
         self.meth_txt.set("Choisir une méthode: ")
-        self.label_meth = Label(self.fr3, textvariable=self.meth_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
+        self.label_meth = Label(self.fr3, textvariable=self.meth_txt,justify=RIGHT, anchor="w",height=4, font=("Arial", 12))
         self.label_meth.grid(sticky = E, row=2, column=0)
         
         self.meth = Combobox(self.fr3,values=["---","Rectangle", "Trapéze", "Simpson", "Point Milieu"], state="readonly")
@@ -162,7 +162,7 @@ class mclass:
             # Borne Inf :
         self.integ_txt=StringVar()
         self.integ_txt.set("Donner borne inf: ")
-        self.label_integ = Label(self.fr3, textvariable=self.integ_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
+        self.label_integ = Label(self.fr3, textvariable=self.integ_txt,justify=RIGHT, anchor="w",height=4, font=("Arial", 12))
         self.label_integ.grid(sticky = E,row=3,column=0)
     
         self.boxinf = Entry(self.fr3,width=10,borderwidth=3,bg="yellow green")
@@ -171,19 +171,38 @@ class mclass:
             # Borne Sup :
         self.integ_txt_2=StringVar()
         self.integ_txt_2.set("Donner borne sup: ")
-        self.label_integ_2 = Label(self.fr3, textvariable=self.integ_txt_2,justify=RIGHT, anchor="w", font=("Arial", 12))
+        self.label_integ_2 = Label(self.fr3, textvariable=self.integ_txt_2,justify=RIGHT, anchor="w",height=4, font=("Arial", 12))
         self.label_integ_2.grid(sticky = E,row=4,column=0)
     
         self.boxsup = Entry(self.fr3,width=10,borderwidth=3,bg="yellow green")
         self.boxsup.grid(sticky = W,row=4,column=1)
 
+            # Labels des reusltats
+                # Valeur Approché = V.A
+        self.va_txt=StringVar()
+        self.va_txt.set("V.A: ")
+        self.label_va = Label(self.fr3, textvariable=self.va_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
+        self.label_va.grid(sticky = E, row=5, column=0)
+        
+        self.res_va_txt=StringVar()
+        self.res_va = Label(self.fr3,textvariable=self.res_va_txt,justify=RIGHT, anchor="w", width=10,borderwidth=3,bg="yellow green")
+        self.res_va.grid(sticky = W, row=5, column=1)
+                # Erreur
+        self.er_txt=StringVar()
+        self.er_txt.set("V.A: ")
+        self.label_er = Label(self.fr3, textvariable=self.er_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
+        self.label_va.grid(sticky = E, row=6, column=0)
+        
+        self.res_e_txt=StringVar()
+        self.res_e = Label(self.fr3,textvariable=self.res_e_txt,justify=RIGHT, anchor="w", width=10,borderwidth=3,bg="yellow green")
+        self.res_e.grid(sticky = W, row=6, column=1)
+        
+
             # Button
         self.button_2 = Button (self.fr3, width =15,text="Afficher Rect",bg="yellow green", command=self.affichier_Rect, font=("Arial", 12))
-        self.button_2.grid(row=5,column=0,columnspan=3)
+        self.button_2.grid(row=7,column=0,columnspan=3)
         self.fr3.grid(row=1,column=2,padx=10,pady=10)
        
-
-           
         # Figure
         self.fig = Figure(figsize=(6,6))
         self.a = self.fig.add_subplot(111)
@@ -302,7 +321,6 @@ class mclass:
         plt.show()
 
 
-      
 if __name__ == '__main__':
     
     window= Tk()
