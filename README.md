@@ -32,9 +32,12 @@
 <p> Soit f une fonction dérivable sur un intervalle I ,  Si f' est dérivable sur I sa fonction dérivée f''  (ou  est appelée dérivée seconde de f.
 On peut continuer le processus de dérivation et définir une relation de récurrence pour calculer la fonction dérivée  à l'ordre f**(n) à l'ordre n.
 La fonction f est de classe C**(n) sur l'intervalle I si f**(n) existe sur I en étant continue sur I.</p>
+
 # Méthodes d'intégration numérique: 
+
 ## 1.But
 <p>Le but  est d’aborder le calcul général de l’intégrale d’une fonction f(x) sur un domaine fini délimité par des bornes finies a et b.</p>
+
 
 ## 2.Méthode de Réctangle:
 
