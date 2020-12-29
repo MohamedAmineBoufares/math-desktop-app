@@ -1,5 +1,6 @@
 # Projet_Analyse_Num
 <p>Introduction général:</p>
+
 <p> Ce projet permet de faire une etude de fonction avec un affichage des résultat et de claculer les méthodes d'analyse numériques .</p>
 <p>Tout d'abord ,on peut  définir une fonction mathématique (polynome, trigonométrique..) avec son intervalle ,on donnant comme résultat son primitivé et sa représentation , dérivéet sa représentation et/ou aussi n ordre de dérivé avec spécification de n et sa représentation . En plus , on peut représenté ,avec la fonction donné au début ,plusierus méthodes de l'analyse numérique comme (méthode de rectangle , méthode des trapézes , méthode des points milieux , méthodes de simspon)en donnant pour chaque fonction sa valeur approché ,valeur exacte et l'erreur.</p>
 
