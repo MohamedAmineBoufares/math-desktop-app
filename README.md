@@ -9,6 +9,7 @@
 ## 1.But
 <p>une étude de fonction est la détermination de certaines propriétés d'une fonction numérique pour en tracer une représentation graphique à partir d'une expression analytique ou d'une équation fonctionnelle, ou encore pour en déduire le nombre et la disposition d'antécédents pour diverses valeurs numériques.</p>
 
+
 ## 2.Etude de fonction:
 <p>Pour étudier une fonction f(x), il faut passer d'abord par la détermination du domaine de définition et vise essentiellement la description des variations, voire des lignes de niveau dans le cas de fonctions de plusieurs variables.</p>
 
