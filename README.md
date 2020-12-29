@@ -94,5 +94,3 @@ Elle sera de classe  si elle est indéfiniment dérivable.
 
 
 
-
-
