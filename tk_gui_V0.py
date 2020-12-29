@@ -1,12 +1,42 @@
 import matplotlib
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt
 matplotlib.use('TkAgg')
 import numpy as np
-from numpy import sin ,cos,exp,log,sqrt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from matplotlib.figure import Figure
-from tkinter import *
+from numpy import *
 from sympy import *
+from tkinter import *
+from tkinter.ttk import Combobox
 
+class Rectangle(object): #class rectange 
+    def __init__(self, a, b, n, f):
+        self.a = a
+        self.b = b
+        self.x = np.linspace(a, b, n+1)
+        self.f = f
+        self.n = n
+    def integrate(self,f):
+        x=self.x# contiens les xi
+        y=f(x)#les yi 
+        h = float(x[1] - x[0])
+        s = sum(y[0:-1])
+        return h * s
+    def Graph(self,f,resolution=1001):
+        xl = self.x
+        yl = f(xl)
+        xlist_fine=np.linspace(self.a, self.b, resolution)
+        for i in range(self.n):
+            x_rect = [xl[i], xl[i], xl[i+1], xl[i+1], xl[i]] # abscisses des sommets
+            y_rect = [0   , yl[i], yl[i]  , 0     , 0   ] # ordonnees des sommets
+            plt.plot(x_rect, y_rect,"g")
+        yflist_fine = f(xlist_fine)
+        plt.plot(xlist_fine, yflist_fine)
+        plt.plot(xl, yl,"rd")
+  
+        plt.ylabel('f(x)')
+        plt.title('Rectangle')
+      
 
 class mclass:
 
@@ -14,21 +44,23 @@ class mclass:
         
         self.window = window
         self.window.title("Projet Analyse Numérique")
-        self.fr1 = Frame(window,highlightbackground="black", highlightthickness=2, width=100, height=100, bd= 5) # Frame à gauche
-        self.fr2 = Frame(window,highlightbackground="black", highlightthickness=2, width=100, height=100, bd= 5) # Frame à droite
+        self.window.geometry("1366x768")
+        self.fr1 = Frame(window,highlightbackground="DarkOrange1", highlightthickness=2, width=100, height=200, bd= 5) # Frame à gauche
+        self.fr2 = Frame(window,highlightbackground="black", highlightthickness=2, width=100, height=200, bd= 5) # Frame au milieu
+        self.fr3 = Frame(window,highlightbackground="brown1", highlightthickness=2, width=200, height=300, bd= 5) # Frame à droite
         self.func_txt=StringVar()
         self.func_txt.set("L'expression de f :")
         self.label_func=Label(self.fr1, textvariable=self.func_txt,justify=RIGHT, height=4, font=("Arial", 12))
         self.label_func.grid(row=1,column=0)
         
         self.a_txt=StringVar()
-        self.a_txt.set("a:")
+        self.a_txt.set("A:")
         self.label_a=Label(self.fr1, textvariable=self.a_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_a.grid(sticky = E,row=2,column=0)
         self.boxa = Entry(self.fr1,width=10,borderwidth=3,bg="powder blue")
         self.boxa.grid(sticky = W,row=2,column=1)
         self.b_txt=StringVar()
-        self.b_txt.set("b:")
+        self.b_txt.set("B:")
         self.label_b=Label(self.fr1, textvariable=self.b_txt,justify=RIGHT, anchor="w", height=4, font=("Arial", 12))
         self.label_b.grid(sticky = E,row=3,column=0)
         self.boxb = Entry(self.fr1,width=10,borderwidth=3,bg="powder blue")
@@ -107,6 +139,50 @@ class mclass:
         self.button.grid(row=10,column=0,columnspan=3)
         self.fr1.grid(row=1,column=0,padx=10,pady=10,sticky="ns")
         self.fr2.grid(row=1,column=1,padx=10,pady=10)
+
+        # Partie pour le calcule d'intégrale
+
+            # Label
+        self.integ_txt=StringVar()
+        self.integ_txt.set("Si tu veux calculer la V.A de l'intégrale: ")
+        self.label_integ = Label(self.fr3, textvariable=self.integ_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
+        self.label_integ.grid(row=1,column=0,columnspan=3)
+
+            # ComboBox
+        self.meth_txt=StringVar()
+        self.meth_txt.set("Choisir une méthode: ")
+        self.label_meth = Label(self.fr3, textvariable=self.meth_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
+        self.label_meth.grid(sticky = E, row=2, column=0)
+        
+        self.meth = Combobox(self.fr3,values=["---","Rectangle", "Trapéze", "Simpson", "Point Milieu"], state="readonly")
+        self.meth.current(0)                                                                                                        
+        self.meth.grid(sticky = W, row=2, column=1)
+        self.meth.bind("<<ComboboxSelected>>", self.affichier_Rect)
+
+            # Borne Inf :
+        self.integ_txt=StringVar()
+        self.integ_txt.set("Donner borne inf: ")
+        self.label_integ = Label(self.fr3, textvariable=self.integ_txt,justify=RIGHT, anchor="w", font=("Arial", 12))
+        self.label_integ.grid(sticky = E,row=3,column=0)
+    
+        self.boxinf = Entry(self.fr3,width=10,borderwidth=3,bg="yellow green")
+        self.boxinf.grid(sticky = W,row=3,column=1)
+
+            # Borne Sup :
+        self.integ_txt_2=StringVar()
+        self.integ_txt_2.set("Donner borne sup: ")
+        self.label_integ_2 = Label(self.fr3, textvariable=self.integ_txt_2,justify=RIGHT, anchor="w", font=("Arial", 12))
+        self.label_integ_2.grid(sticky = E,row=4,column=0)
+    
+        self.boxsup = Entry(self.fr3,width=10,borderwidth=3,bg="yellow green")
+        self.boxsup.grid(sticky = W,row=4,column=1)
+
+            # Button
+        self.button_2 = Button (self.fr3, width =15,text="Afficher Rect",bg="yellow green", command=self.affichier_Rect, font=("Arial", 12))
+        self.button_2.grid(row=5,column=0,columnspan=3)
+        self.fr3.grid(row=1,column=2,padx=10,pady=10)
+       
+
            
         # Figure
         self.fig = Figure(figsize=(6,6))
@@ -122,6 +198,7 @@ class mclass:
         self.x = symbols('x')
            
     # Plot + Calculation Function
+
     def plot (self):
         
         self.chbf.set(False)
@@ -155,7 +232,7 @@ class mclass:
         self.res_txt.set(D) # Afichage du Dérivé dans la GUI
         self.resp_txt.set(I) # Afichage du Primitive dans la GUI
         self.canvas.draw()
-       
+
     def afficher_F(self):
 
             if self.chbf.get():
@@ -204,7 +281,28 @@ class mclass:
                 self.a.legend()
                 self.canvas.draw()
     
-    
+    def affichier_Rect(self):
+
+        a = 0
+        b = 10
+        n =10#le nombre de subdivision 
+        x = np.linspace(a, b, n+1)
+        def f(x):
+            return np.sin(x)
+        
+        R = Rectangle(a, b, n, f)
+
+        fig = plt.figure()
+        
+        ax = fig.add_subplot(111)
+        
+        R.Graph(f)
+        print(self.meth.get(), type(self.meth.get()))
+        plt.grid(True)
+        plt.show()
+
+
+      
 if __name__ == '__main__':
     
     window= Tk()
