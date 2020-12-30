@@ -1,5 +1,21 @@
 # Projet_Analyse_Num
-# Introduction général:
+<h1>Sommaire:</h1>
+<ul>
+  <li>Introduction Générale</li>
+  <li>
+  Etude d'une fonction
+   <ol>
+    <li>But</li>
+    <li>Etude de fonction</li>
+    <li>Etude Graphique</li>
+    <li>Etude de primitive</li>
+    <li>Etude de dérivé</li>
+    <ol type="a"> <li> Ordre de dérivé</li></ol>
+   </ol>
+   </li>
+  <li>Milk</li>
+</ul>
+<h1>Introduction général:</h1>
 
 <p> Ce projet permet d'étuder une fonction <a href="https://www.codecogs.com/eqnedit.php?latex=f(x)" target="_blank"> <img src="https://latex.codecogs.com/gif.latex?f(x)" title="f(x)" /></a> et de la  représenter graphiquement  aussi de calculer et de représenter les méthodes d'intégration numériques .</p>
 <p>Tout d'abord ,on peut  définir une fonction mathématique (polynome, trigonométrique..) avec son intervalle ,on donnant comme résultat son primitivé et sa représentation , dérivéet sa représentation et/ou aussi n ordre de dérivé en spécifiant n et sa représentation . En plus , on peut représenté ,avec la fonction donné au début ,plusierus méthodes de l'analyse numérique comme (méthode de rectangle , méthode des trapézes , méthode des points milieux , méthodes de simspon)en donnant pour chaque fonction sa valeur approché ,valeur exacte et l'erreur.</p>
