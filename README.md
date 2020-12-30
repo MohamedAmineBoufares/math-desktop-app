@@ -1,19 +1,29 @@
 # Projet_Analyse_Num
 <h1>Sommaire:</h1>
+
 <ul>
   <li>Introduction Générale</li>
   <li>
-  Etude d'une fonction
-   <ol type="1">
-    <li>Etude de fonction</li>
-    <li>Etude Graphique</li>
-    <li>Etude de primitive</li>
-    <li>Etude de dérivé</li>
-    <ol type="a"> <li> Ordre de dérivé</li></ol>
-   </ol>
-   </li>
-  <li>Milk</li>
+    Etude d'une fonction
+    <ul>
+      <li>Etude de fonction</li>
+      <li>Etude Graphique</li>
+      <li>Etude de primitive</li>
+      <li>Etude de dérivé</li>
+      <ul><li> Ordre de dérivé</li></ul>
+   </ul>
+  </li>
+  <li>Methode d'intégration numérique
+    <ul>
+      <li>But</li>
+      <li>Méthode de Réctangle</li>
+      <li>Méthode des Trapézes</li>
+      <li>Méthode de Simpson</li>
+      <li>Méthode des Points Milieux</li>
+  </li>
+  <li>Conclustion et perspectives</li>
 </ul>
+
 <h1>Introduction général:</h1>
 
 <p> Ce projet permet d'étuder une fonction <a href="https://www.codecogs.com/eqnedit.php?latex=f(x)" target="_blank"> <img src="https://latex.codecogs.com/gif.latex?f(x)" title="f(x)" /></a> et de la  représenter graphiquement  aussi de calculer et de représenter les méthodes d'intégration numériques .</p>
