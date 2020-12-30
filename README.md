@@ -2,8 +2,7 @@
 <h1>Sommaire:</h1>
 
 <ul>
-  <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#introduction-g%C3%A9n%C3%A9ral">
-    Introduction Générale</a>
+  <li><a href="intro">Introduction Générale</a>
     </li>
   <li>
     <a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#etude-dune-fonction--">
@@ -50,7 +49,7 @@
     Conclustion et perspectives </a></li>
 </ul>
 
-<h1>Introduction général:</h1>
+<h1 href="intro">Introduction général:</h1>
 
 <p> Ce projet permet d'étuder une fonction <a href="https://www.codecogs.com/eqnedit.php?latex=f(x)" target="_blank"> <img src="https://latex.codecogs.com/gif.latex?f(x)" title="f(x)" /></a> et de la  représenter graphiquement  aussi de calculer et de représenter les méthodes d'intégration numériques .</p>
 <p>Tout d'abord ,on peut  définir une fonction mathématique (polynome, trigonométrique..) avec son intervalle ,on donnant comme résultat son primitivé et sa représentation , dérivéet sa représentation et/ou aussi n ordre de dérivé en spécifiant n et sa représentation . En plus , on peut représenté ,avec la fonction donné au début ,plusierus méthodes de l'analyse numérique comme (méthode de rectangle , méthode des trapézes , méthode des points milieux , méthodes de simspon)en donnant pour chaque fonction sa valeur approché ,valeur exacte et l'erreur.</p>
