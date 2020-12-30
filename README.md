@@ -6,43 +6,43 @@
     Introduction Générale</a>
     </li>
   <li>
-    <a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#etude-dune-fonction-">
+    <a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#etude-dune-fonction--">
       Etude d'une fonction</a>
     <ul>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#1but">But</a>
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-1but-">But</a>
         </li>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#2etude-de-fonction">
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-2etude-de-fonction">
         Etude de fonction</a>
         </li>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#3etude-graphique">Etude Graphique</a>
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-3etude-graphique">Etude Graphique</a>
       </li>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#4etude-de-primitive-">
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-4etude-de-primitive-">
         Etude de primitive</a>
         </li>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#5etude-de-d%C3%A9riv%C3%A9">
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-5etude-de-d%C3%A9riv%C3%A9">
         Etude de dérivé</a>
         </li>
-      <ul><li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#5etude-de-d%C3%A9riv%C3%A9"> 
+      <ul><li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-5aordre-de-d%C3%A9riv%C3%A9"> 
         Ordre de dérivé</a>
         </li></ul>
    </ul>
   </li>
-  <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#m%C3%A9thodes-dint%C3%A9gration-num%C3%A9rique">
+  <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-m%C3%A9thodes-dint%C3%A9gration-num%C3%A9rique">
     Methode d'intégration numérique </a>
     <ul>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#1but-1">
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-1but">
         But</a>
         </li>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#2m%C3%A9thode-de-r%C3%A9ctangle">
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-2m%C3%A9thode-de-r%C3%A9ctangle">
         Méthode de Réctangle</a>
         </li>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#3m%C3%A9thode-des-trap%C3%A8zes">
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-3m%C3%A9thode-des-trap%C3%A8zes">
         Méthode des Trapézes</a>
         </li>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#4m%C3%A9thode-de-simpson">
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-4m%C3%A9thode-de-simpson">
         Méthode de Simpson</a>
         </li>
-      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#5m%C3%A9thode-des-points-milieux">
+      <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-5m%C3%A9thode-des-points-milieux">
         Méthode des Points Milieux</li>
     </ul>
   </li>
