@@ -20,6 +20,7 @@
       <li>Méthode des Trapézes</li>
       <li>Méthode de Simpson</li>
       <li>Méthode des Points Milieux</li>
+    </ul>
   </li>
   <li>Conclustion et perspectives</li>
 </ul>
