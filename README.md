@@ -22,7 +22,7 @@
 <p>Une primitive d’une fonction  f est une fonction F dont f est la dérivée : <a href="https://www.codecogs.com/eqnedit.php?latex=F'=f" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F'=f" title="F'=f" style="text-align:center;" /></a>. Il s’agit donc d’un antécédent pour l’opération de dérivation.</p>
 
 <p>La détermination d’une primitive sert d’abord au calcul des intégrales de fonctions continues sur un segment, en application du théorème fondamental de l'analyse:</p> 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\int&space;f(x)dx=F(b)-F(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int&space;f(x)dx=F(b)-F(a)" title="\int f(x)dx=F(b)-F(a)" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\int_{a}^{b}f(x)dx" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_{a}^{b}f(x)dx" title="\int_{a}^{b}f(x)dx" /></a>
 
  ## 5.Etude de dérivé:
 <p>La dérivée d'une fonction f est une fonction qui, à tout nombre pour lequel f admet un nombre dérivé, associe ce nombre dérivé. La dérivée en un point d'une fonction de plusieurs variables réelles, ou à valeurs vectorielles, est plus couramment appelée différentielle de la fonction en ce point, et n'est pas traitée ici. La dérivée d'une fonction f en x est usuellement notée</p> 
