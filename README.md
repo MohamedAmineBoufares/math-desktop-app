@@ -22,7 +22,7 @@
 <p>une primitive d’une fonction  f est une fonction F dont f est la dérivée : F'=f. Il s’agit donc d’un antécédent pour l’opération de dérivation.</p>
 
 <p>La détermination d’une primitive sert d’abord au calcul des intégrales de fonctions continues sur un segment, en application du théorème fondamental de l'analyse.:
-</p> <a href="https://www.codecogs.com/eqnedit.php?latex=f(x)dx=F(b)-F(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(x)dx=F(b)-F(a)" title="f(x)dx=F(b)-F(a)" /></a>
+</p> <a href="https://www.codecogs.com/eqnedit.php?latex=\int&space;f(x)dx=F(b)-F(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int&space;f(x)dx=F(b)-F(a)" title="\int f(x)dx=F(b)-F(a)" /></a>
  <p>photo de dérivé</p>
  
  ## 5.Etude de dérivé:
