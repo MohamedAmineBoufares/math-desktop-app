@@ -89,7 +89,7 @@ La fonction f est de classe C**(n) sur l'intervalle I si f**(n) existe sur I en 
 <p>r=b-a f(a+b/2)
   
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette aire est aussi celle du trapèze de base [a,b] et dont le côté opposé est tangent au graphe de f en  c= (a+b)/2 ce qui explique sa relative bonne précision.</FONT>
-<math>$$V.A = \frac {b-a}n \sum\limits _{k=0}^{n-1} f(t_k) $$ </math>
+<math class=chem> Fe_2_^2+^Cr_2_O_4_</math>
 
 <p>taswira</p>
 
