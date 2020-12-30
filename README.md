@@ -89,6 +89,17 @@ La fonction f est de classe C**(n) sur l'intervalle I si f**(n) existe sur I en 
 <p>r=b-a f(a+b/2)
   
   <FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette aire est aussi celle du trapèze de base [a,b] et dont le côté opposé est tangent au graphe de f en  c= (a+b)/2 ce qui explique sa relative bonne précision.</FONT>
+<math>
+	(<array align="c"> <item>
+		&ldet;<array align="cc">
+			<item>x<sub>11</sub>
+			<item>x<sub>12</sub>
+			<item>x<sub>21</sub>			
+			<item>x<sub>22</sub>
+		</array><rd>&rdet;
+		<item> y <item> z
+	</array>)
+</math>
 
 <p>taswira</p>
 
