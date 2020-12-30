@@ -4,8 +4,7 @@
   <li>Introduction Générale</li>
   <li>
   Etude d'une fonction
-   <ol type="1">
-    <li>But</li>
+   <ol type="I">
     <li>Etude de fonction</li>
     <li>Etude Graphique</li>
     <li>Etude de primitive</li>
