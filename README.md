@@ -19,7 +19,7 @@
 <p>La lecture graphique permet aussi de repérer les intervalles en abscisse sur lesquels la fonction est monotone, c'est-à-dire soit croissante, soit décroissante.</p>
 
 ## 4.Etude de primitive :
-<p>Une primitive d’une fonction  f est une fonction F dont f est la dérivée : <a href="https://www.codecogs.com/eqnedit.php?latex=F'=f" target="_blank" style="text-align:center;"><img src="https://latex.codecogs.com/gif.latex?F'=f" title="F'=f" /></a>. Il s’agit donc d’un antécédent pour l’opération de dérivation.</p>
+<p>Une primitive d’une fonction  f est une fonction F dont f est la dérivée : <a href="https://www.codecogs.com/eqnedit.php?latex=F'=f" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F'=f" title="F'=f" style="text-align:center;" /></a>. Il s’agit donc d’un antécédent pour l’opération de dérivation.</p>
 
 <p>La détermination d’une primitive sert d’abord au calcul des intégrales de fonctions continues sur un segment, en application du théorème fondamental de l'analyse:</p> 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\int&space;f(x)dx=F(b)-F(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int&space;f(x)dx=F(b)-F(a)" title="\int f(x)dx=F(b)-F(a)" /></a>
