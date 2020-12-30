@@ -2,7 +2,7 @@
 <h1>Sommaire:</h1>
 
 <ul>
-  <li href="intro">Introduction Générale</li>
+  <li href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#introduction-g%C3%A9n%C3%A9ral">Introduction Générale</li>
   <li href="etude">
     Etude d'une fonction
     <ul>
