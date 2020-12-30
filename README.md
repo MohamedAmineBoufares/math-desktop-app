@@ -21,11 +21,11 @@
 ## 4.Etude de primitive :
 <p>Une primitive d’une fonction  f est une fonction F dont f est la dérivée : <a href="https://www.codecogs.com/eqnedit.php?latex=F'=f" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F'=f" title="F'=f" /></a>. Il s’agit donc d’un antécédent pour l’opération de dérivation.</p>
 
-<p>La détermination d’une primitive sert d’abord au calcul des intégrales de fonctions continues sur un segment, en application du théorème fondamental de l'analyse:
-</p> <a href="https://www.codecogs.com/eqnedit.php?latex=\int&space;f(x)dx=F(b)-F(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int&space;f(x)dx=F(b)-F(a)" title="\int f(x)dx=F(b)-F(a)" /></a>
+<p>La détermination d’une primitive sert d’abord au calcul des intégrales de fonctions continues sur un segment, en application du théorème fondamental de l'analyse:</p> 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\int&space;f(x)dx=F(b)-F(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int&space;f(x)dx=F(b)-F(a)" title="\int f(x)dx=F(b)-F(a)" /></a>
 
  ## 5.Etude de dérivé:
- <p>La dérivée d'une fonction f est une fonction qui, à tout nombre pour lequel f admet un nombre dérivé, associe ce nombre dérivé. La dérivée en un point d'une fonction de plusieurs variables réelles, ou à valeurs vectorielles, est plus couramment appelée différentielle de la fonction en ce point, et n'est pas traitée ici. La dérivée d'une fonction f en x est usuellement notée</p> 
+<p>La dérivée d'une fonction f est une fonction qui, à tout nombre pour lequel f admet un nombre dérivé, associe ce nombre dérivé. La dérivée en un point d'une fonction de plusieurs variables réelles, ou à valeurs vectorielles, est plus couramment appelée différentielle de la fonction en ce point, et n'est pas traitée ici. La dérivée d'une fonction f en x est usuellement notée</p> 
 <a href="https://www.codecogs.com/eqnedit.php?latex=f'(x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f'(x)" title="f'(x)" /></a> 
 <p>ou</p> 
 <a href="https://www.codecogs.com/eqnedit.php?latex=df/dx(x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?df/dx(x)" title="df/dx(x)" /></a>
@@ -43,57 +43,56 @@ La fonction <a href="https://www.codecogs.com/eqnedit.php?latex=f^{(n)}" target=
 
 ## 2.Méthode de Réctangle:
 
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette méthode, très élémentaire, basée sur les sommes de Cauchy-Riemann (approchant l'aire sous une courbe) et appliquée à une fonction f continue, permet le calcul approché d'intégrales en choisissant une subdivision régulière de pas 
- <a href="https://www.codecogs.com/eqnedit.php?latex=xi&plus;1&space;-&space;xi&space;=&space;\frac{(b-a)}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?xi&plus;1&space;-&space;xi&space;=&space;\frac{(b-a)}{n}" title="xi+1 - xi = \frac{(b-a)}{n}" /></a>
-donc indépendant de i avec une valeur de n <i>"suffisamment grande"</i>.</FONT>
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">On obtient une succession de rectangles en rose ci-contre, d'où le nom de cette méthode, approchant l'aire sous la courbe,  où ci est choisi ici au "milieu" de 
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette méthode, très élémentaire, basée sur les sommes de Cauchy-Riemann (approchant l'aire sous une courbe) et appliquée à une fonction f continue, permet le calcul approché d'intégrales en choisissant une subdivision régulière de pas </Font>
+<a href="https://www.codecogs.com/eqnedit.php?latex=xi&plus;1&space;-&space;xi&space;=&space;\frac{(b-a)}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?xi&plus;1&space;-&space;xi&space;=&space;\frac{(b-a)}{n}" title="xi+1 - xi = \frac{(b-a)}{n}" /></a>
+<p>donc indépendant de i avec une valeur de n <i>"suffisamment grande"</i>.</p>
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">On obtient une succession de rectangles en rose ci-contre, d'où le nom de cette méthode, approchant l'aire sous la courbe,  où ci est choisi ici au "milieu" de </FONT>
 <a href="https://www.codecogs.com/eqnedit.php?latex=[xi&space;,&space;xi&plus;1]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?[xi&space;,&space;xi&plus;1]" title="[xi , xi+1]" /></a>
-On calcule :</FONT>
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">
+<p>On calcule :</p>
 <a href="https://www.codecogs.com/eqnedit.php?latex=S_{n}&space;=&space;h&space;*&space;\sum&space;f(c_{i})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S_{n}&space;=&space;h&space;*&space;\sum&space;f(c_{i})" title="S_{n} = h * \sum f(c_{i})" /></a>
-i variant de 0 à n - 1</FONT>
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">avec : 
-<a href="https://www.codecogs.com/eqnedit.php?latex=h&space;=&space;\frac&space;{b-a}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?h&space;=&space;\frac&space;{b-a}{n}" title="h = \frac {b-a}{n}" /></a>
-<a href="https://www.codecogs.com/eqnedit.php?latex=x_i&space;=&space;a&space;&plus;&space;i.h" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x_i&space;=&space;a&space;&plus;&space;i.h" title="x_i = a + i.h" /></a>
+<p>i variant de 0 à n - 1</p>
+<p>avec : </p>
+<a href="https://www.codecogs.com/eqnedit.php?latex=h&space;=&space;\frac&space;{b-a}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?h&space;=&space;\frac&space;{b-a}{n}" title="h = \frac {b-a}{n}" /></a> <br/>
+<a href="https://www.codecogs.com/eqnedit.php?latex=x_i&space;=&space;a&space;&plus;&space;i.h" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x_i&space;=&space;a&space;&plus;&space;i.h" title="x_i = a + i.h" /></a> <br/>
 <a href="https://www.codecogs.com/eqnedit.php?latex=c_i&space;=&space;(x_i&plus;1&space;&plus;&space;x_i)/2&space;=&space;a&space;&plus;&space;i.h&space;&plus;&space;\frac&space;{h}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c_i&space;=&space;(x_i&plus;1&space;&plus;&space;x_i)/2&space;=&space;a&space;&plus;&space;i.h&space;&plus;&space;\frac&space;{h}{2}" title="c_i = (x_i+1 + x_i)/2 = a + i.h + \frac {h}{2}" /></a>
-Le passage à la limite fournit l'intégrale cherchée</FONT>
+<p>Le passage à la limite fournit l'intégrale cherchée</p>
 
 ## 3.Méthode des trapèzes:
 
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode des trapèzes est une méthode pour le calcul numérique d'une intégrale ,s'appuyant sur l'interpolation linéaire par intervalles.</FONT>
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode des trapèzes est une méthode pour le calcul numérique d'une intégrale ,s'appuyant sur l'interpolation linéaire par intervalles.</FONT> </br>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\int_{a}^{b}&space;f(x)dx" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_{a}^{b}&space;f(x)dx" title="\int_{a}^{b} f(x)dx" /></a>
 
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">Le principe est d'assimiler la région sous la courbe représentative d'une fonction f définie sur un segment 
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">Le principe est d'assimiler la région sous la courbe représentative d'une fonction f définie sur un segment </br>
 <a href="https://www.codecogs.com/eqnedit.php?latex=[a&space;,&space;b]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?[a&space;,&space;b]" title="[a , b]" /></a> à un trapèze et d'en calculer l'aire T :</FONT>
-<a href="https://www.codecogs.com/eqnedit.php?latex=T&space;=&space;(b-a)&space;\frac{f(a)&plus;f(b)}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T&space;=&space;(b-a)&space;\frac{f(a)&plus;f(b)}{2}" title="T = (b-a) \frac{f(a)+f(b)}{2}" /></a>
+<br/><a href="https://www.codecogs.com/eqnedit.php?latex=T&space;=&space;(b-a)&space;\frac{f(a)&plus;f(b)}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T&space;=&space;(b-a)&space;\frac{f(a)&plus;f(b)}{2}" title="T = (b-a) \frac{f(a)+f(b)}{2}" /></a>
 
 ## 4.Méthode de simpson:
 
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode de Simpson,<i>du nom de Thomas Simpson</i>, est une technique de calcul numérique d'une intégrale, c'est-à-dire, le calcul approché de:</FONT>
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode de Simpson,<i>du nom de Thomas Simpson</i>, est une technique de calcul numérique d'une intégrale, c'est-à-dire, le calcul approché de:</FONT> <br/>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\int_{a}^{b}&space;f(x)dx" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_{a}^{b}&space;f(x)dx" title="\int_{a}^{b} f(x)dx" /></a>
 
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette méthode utilise l'approximation d'ordre 2 de f par un polynôme quadratique P prenant les mêmes valeurs que f aux points d'abscisse a, b et 
-<a href="https://www.codecogs.com/eqnedit.php?latex=m&space;=&space;\frac&space;{(a&space;&plus;&space;b)}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?m&space;=&space;\frac&space;{(a&space;&plus;&space;b)}{2}" title="m = \frac {(a + b)}{2}" /></a>
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette méthode utilise l'approximation d'ordre 2 de f par un polynôme quadratique P prenant les mêmes valeurs que f aux points d'abscisse a, b et <br/>
+<a href="https://www.codecogs.com/eqnedit.php?latex=m&space;=&space;\frac&space;{(a&space;&plus;&space;b)}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?m&space;=&space;\frac&space;{(a&space;&plus;&space;b)}{2}" title="m = \frac {(a + b)}{2}" /></a> <br/>
 Pour déterminer l'expression de cette parabole <i>(polynôme de degré 2)</i>, on utilise l'interpolation lagrangienne. Le résultat peut être mis sous la forme :</FONT>
 <a href="https://www.codecogs.com/eqnedit.php?latex=P(x)=f(a)\frac{(x-m)(x-b)}{(a-m)(a-b)}&space;&plus;&space;f(m)\frac&space;{(x-a)(x-b)}{(m-a)(m-b)}&space;&plus;&space;f(b)\frac{(x-a)(x-m)}{(b-a)(b-m)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(x)=f(a)\frac{(x-m)(x-b)}{(a-m)(a-b)}&space;&plus;&space;f(m)\frac&space;{(x-a)(x-b)}{(m-a)(m-b)}&space;&plus;&space;f(b)\frac{(x-a)(x-m)}{(b-a)(b-m)}" title="P(x)=f(a)\frac{(x-m)(x-b)}{(a-m)(a-b)} + f(m)\frac {(x-a)(x-b)}{(m-a)(m-b)} + f(b)\frac{(x-a)(x-m)}{(b-a)(b-m)}" /></a>
 
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">Un polynôme étant une fonction très facile à intégrer, on approche l'intégrale de la fonction f sur l'intervalle [a, b], par l'intégrale de P sur ce même intervalle. On a ainsi, la simple formule :</FONT>
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">Un polynôme étant une fonction très facile à intégrer, on approche l'intégrale de la fonction f sur l'intervalle [a, b], par l'intégrale de P sur ce même intervalle. On a ainsi, la simple formule :</FONT> <br/>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\int_{a}^{b}f(x)dx&space;\approx&space;\int_{a}^{b}P(x)dx&space;=&space;\frac{b-a}{6}&space;\left&space;[&space;f(a)&plus;4f\left&space;(&space;\frac{a&plus;b}{2}&space;\right&space;)&space;&plus;f(b)\right&space;]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_{a}^{b}f(x)dx&space;\approx&space;\int_{a}^{b}P(x)dx&space;=&space;\frac{b-a}{6}&space;\left&space;[&space;f(a)&plus;4f\left&space;(&space;\frac{a&plus;b}{2}&space;\right&space;)&space;&plus;f(b)\right&space;]" title="\int_{a}^{b}f(x)dx \approx \int_{a}^{b}P(x)dx = \frac{b-a}{6} \left [ f(a)+4f\left ( \frac{a+b}{2} \right ) +f(b)\right ]" /></a>
 
 ## 5.Méthode des points milieux:
 
 
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode du point médian est une méthode permettant de réaliser le calcul numérique d'une intégrale </FONT>
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">En analyse numérique, la méthode du point médian est une méthode permettant de réaliser le calcul numérique d'une intégrale </FONT> <br/>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\int_{a}^{b}&space;f(x)dx" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_{a}^{b}&space;f(x)dx" title="\int_{a}^{b} f(x)dx" /></a>
 
 
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">Le principe est d'approcher l'intégrale de la fonction f par l'aire d'un rectangle de base le segment [a,b] et de hauteur </FONT>
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">Le principe est d'approcher l'intégrale de la fonction f par l'aire d'un rectangle de base le segment [a,b] et de hauteur </FONT> <br/>
 <a href="https://www.codecogs.com/eqnedit.php?latex=f\left&space;(&space;\frac{a&plus;b}{2}&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f\left&space;(&space;\frac{a&plus;b}{2}&space;\right&space;)" title="f\left ( \frac{a+b}{2} \right )" /></a>
 
 <FONT FACE="Arial, Helvetica, sans-serif" size="4">ce qui donne : </FONT>
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=R&space;=&space;(b-a)f\left&space;(&space;\frac{a&plus;b}{2}&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R&space;=&space;(b-a)f\left&space;(&space;\frac{a&plus;b}{2}&space;\right&space;)" title="R = (b-a)f\left ( \frac{a+b}{2} \right )" /></a>
   
-<FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette aire est aussi celle du trapèze de base [a,b] et dont le côté opposé est tangent au graphe de f en  
-<a href="https://www.codecogs.com/eqnedit.php?latex=C&space;=&space;\frac{a&plus;b}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C&space;=&space;\frac{a&plus;b}{2}" title="C = \frac{a+b}{2}" /></a>
+<FONT FACE="Arial, Helvetica, sans-serif" size="4">Cette aire est aussi celle du trapèze de base [a,b] et dont le côté opposé est tangent au graphe de f en <br/>  
+<a href="https://www.codecogs.com/eqnedit.php?latex=C&space;=&space;\frac{a&plus;b}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C&space;=&space;\frac{a&plus;b}{2}" title="C = \frac{a+b}{2}" /></a> <br/>
 ce qui explique sa relative bonne précision.</FONT>
