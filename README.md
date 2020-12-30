@@ -1,7 +1,7 @@
 # Projet_Analyse_Num
 # Introduction général:
 
-<p> Ce projet permet d'étuder une fonction f(x) et de la  représenter graphiquement  aussi de calculer et de représenter les méthodes d'intégration numériques .</p>
+<p> Ce projet permet d'étuder une fonction <a href="https://www.codecogs.com/eqnedit.php?latex=f(x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(x)" title="f(x)" /></a> et de la  représenter graphiquement  aussi de calculer et de représenter les méthodes d'intégration numériques .</p>
 <p>Tout d'abord ,on peut  définir une fonction mathématique (polynome, trigonométrique..) avec son intervalle ,on donnant comme résultat son primitivé et sa représentation , dérivéet sa représentation et/ou aussi n ordre de dérivé en spécifiant n et sa représentation . En plus , on peut représenté ,avec la fonction donné au début ,plusierus méthodes de l'analyse numérique comme (méthode de rectangle , méthode des trapézes , méthode des points milieux , méthodes de simspon)en donnant pour chaque fonction sa valeur approché ,valeur exacte et l'erreur.</p>
 
 # Etude d'une fonction :
@@ -93,3 +93,5 @@ La fonction f est de classe C**(n) sur l'intervalle I si f**(n) existe sur I en 
 <p>taswira</p>
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=f(x)dx=F(b)-F(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(x)dx=F(b)-F(a)" title="f(x)dx=F(b)-F(a)" /></a>
+
+<img src="Pics/demo.gif" alt="D2mo du Mini Projet"/>
