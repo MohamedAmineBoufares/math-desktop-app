@@ -153,4 +153,4 @@ Pour déterminer l'expression de cette parabole <i>(polynôme de degré 2)</i>, 
 <a href="https://www.codecogs.com/eqnedit.php?latex=C&space;=&space;\frac{a&plus;b}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C&space;=&space;\frac{a&plus;b}{2}" title="C = \frac{a+b}{2}" /></a> <br/>
 ce qui explique sa relative bonne précision.</FONT>
 
-<h2> Conclustion et perspectives</h2>
+<h1> Conclustion et perspectives</h1>
