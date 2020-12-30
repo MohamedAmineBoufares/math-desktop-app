@@ -46,7 +46,8 @@
         Méthode des Points Milieux</li>
     </ul>
   </li>
-  <li href="conc">Conclustion et perspectives</li>
+  <li><a href="https://github.com/MohamedAmineBoufares/Projet_Analyse_Num/blob/main/README.md#-conclustion-et-perspectives">
+    Conclustion et perspectives </a></li>
 </ul>
 
 <h1>Introduction général:</h1>
