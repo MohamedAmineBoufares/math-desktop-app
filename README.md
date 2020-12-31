@@ -157,3 +157,4 @@ ce qui explique sa relative bonne précision.</FONT>
 
 <p>La thématique centrale de ce projet était l'étude de fonction donnée en donnant le primitive et le dérivée avec une représentation graphique .Aussi,avec la fonction donnée, les méthodes d'intégration numérique avec n nombre de subdivision d'intervalle et la valeur exact,valeur approché et la valeur de l'erreur.  </p>
 
+
