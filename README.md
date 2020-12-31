@@ -154,3 +154,4 @@ Pour déterminer l'expression de cette parabole <i>(polynôme de degré 2)</i>, 
 ce qui explique sa relative bonne précision.</FONT>
 
 <h1> Conclustion et perspectives</h1>
+
