@@ -56,7 +56,7 @@
 
 <img src="/Pictures/demo_f.gif" alt="Calculer le dérive et prémitive de f(x) et afficher les 3 courbes" width="800" height="400">
 
-<p>En plus , on peut représenté ,avec la fonction donné au début ,plusierus méthodes de l'analyse numérique comme <i>(méthode de rectangle , méthode des trapézes , méthode des points milieux , méthodes de simspon)</i> en donnant pour chaque fonction sa valeur approché ,valeur exacte et l'erreur.</p>
+<p>En plus , on peut représenté ,avec la fonction donné au début ,plusierus méthodes d'intégration numérique comme <i>(méthode de rectangle , méthode des trapézes , méthode des points milieux , méthodes de simspon)</i> en donnant pour chaque fonction sa valeur approché ,valeur exacte et l'erreur.</p>
 
 <img src="/Pictures/demo_integ.gif" alt="Calculer la valeur exacte d'un itégrale et calculer et afficher la valeur approché ansi que l'erreur d'une méthode d'analyse numérique" width="800" height="400">
 
@@ -155,5 +155,5 @@ ce qui explique sa relative bonne précision.</FONT>
 
 <h1> Conclustion et perspectives</h1>
 
-<p></p>
+<p>La thématique centrale de ce projet était l'étude de fonction donnée en donnant le primitive et le dérivée avec une représentation graphique .Aussi,avec la fonction donné, les méthodes d'intégration numérique </p>
 
