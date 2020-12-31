@@ -155,5 +155,5 @@ ce qui explique sa relative bonne précision.</FONT>
 
 <h1> Conclustion et perspectives</h1>
 
-<p>La thématique centrale de ce projet était l'étude de fonction donnée en donnant le primitive et le dérivée avec une représentation graphique .Aussi,avec la fonction donné, les méthodes d'intégration numérique </p>
+<p>La thématique centrale de ce projet était l'étude de fonction donnée en donnant le primitive et le dérivée avec une représentation graphique .Aussi,avec la fonction donnée, les méthodes d'intégration numérique </p>
 
