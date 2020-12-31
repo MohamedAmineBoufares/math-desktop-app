@@ -156,4 +156,4 @@ ce qui explique sa relative bonne précision.</FONT>
 <h1> Conclustion et perspectives</h1>
 
 <p>La thématique centrale de ce projet était l'étude de fonction donnée en donnant le primitive et le dérivée avec une représentation graphique .Aussi,avec la fonction donnée, les méthodes d'intégration numérique avec n nombre de subdivision d'intervalle et la valeur exact,valeur approché et la valeur de l'erreur.  </p>
-<p></p>
+<p>Ce projet peut être bien développer une application mobile .Et par conséquence , on peut lire automatique la fonction f(x) à partir de la caméra de téléphone sans besion de l'ecrire .</p>
