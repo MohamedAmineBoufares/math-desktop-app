@@ -159,4 +159,5 @@ ce qui explique sa relative bonne précision.</FONT>
 <p>Ce projet peut être bien développer en une application mobile .Et par conséquence ,on peut lire automatiquement la fonction f(x) à partir de la caméra de téléphone sans besion de l'ecrire à l'aide de la technique intélligence artificielle. Cette dernière nécessite une large base de données qui permet de trainer notre modéle avec des images contenant plusierus equations pour le permettre ,enfin, la reconnaissance d'equation avec valeur 100 % de précsions.</p>
 
 <p>Exemple d'application mobile avec I.A qui permet la reconnaissance d'equation mathématique et ensuite l'etude et la résolution de l'équation .</p>
+
 <img src="/Pictures/photomathapp.gif" alt="Calculer le dérive et prémitive de f(x) et afficher les 3 courbes" width="800" height="400">
