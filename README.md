@@ -158,5 +158,5 @@ ce qui explique sa relative bonne précision.</FONT>
 <p>La thématique centrale de ce projet était l'étude de fonction f(x) donnée en donnant le primitive et le dérivée avec une représentation graphique .Aussi,avec la fonction f(x) donnée, les méthodes d'intégration numérique avec n nombre de subdivision d'intervalle et la valeur exact,valeur approché et la valeur de l'erreur.  </p>
 <p>Ce projet peut être bien développer en une application mobile .Et par conséquence ,on peut lire automatiquement la fonction f(x) à partir de la caméra de téléphone sans besion de l'ecrire à l'aide de la technique intélligence artificielle. Cette dernière nécessite une large base de données qui permet de trainer notre modéle avec des images contenant plusierus equations pour le permettre ,enfin, la reconnaissance d'equation avec 100 % de précsions.</p>
 <p>Exemple d'application mobile avec I.A qui permet la reconnaissance d'equation mathématique et ensuite l'etude et la résolution de l'équation .</p>
-<img src="/Pictures/demo_f.gif" alt="Calculer le dérive et prémitive de f(x) et afficher les 3 courbes" width="800" height="400">
+<img src="/Pictures/photomathapp.gif" alt="Calculer le dérive et prémitive de f(x) et afficher les 3 courbes" width="800" height="400">
 
